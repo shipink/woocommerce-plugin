@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			$params['platform_store_id'] = get_current_network_id();
             $params['name'] = get_option('blogname');
             $params['url'] = get_option('home');
-			$connectQuery = http_build_query($params);
+			$connectQuery = esc_html(http_build_query($params));
 ?>
 <style>
 @import url(@import url('https://fonts.googleapis.com/css?family=Lato:100,300,400');
@@ -103,7 +103,7 @@ button:hover {
   <script type="text/javascript">
   jQuery(document).ready(function ($) {
     $('#woocommerce_shipink_connect').on('click', function (e) {
-		window.location.href = 'https://app.shipink.io/signup?<?= $connectQuery ?>';
+		window.location.href = 'https://app.shipink.io/signup?<?php  echo esc_html($connectQuery); ?>';
     });
 });
 
