@@ -22,11 +22,23 @@ Shipink Overview
 *   Visualize average fulfillment and delivery times, as well as costs
 *   We develop a software product that not only allows integration with the most appropriate shipping companies, but also evaluates and selects these companies based on criteria such as price, rating, delivery time, return rate, and more, taking into account the needs of the customer.
 
+Supported Carriers:
+*   Aras Kargo
+*   MNG Kargo
+*   Yurtiçi Kargo
+*   PTT
+*   Sendeo
+*   Octovan Express
+*   UPS Global
+*   Fedex
+*   Aramex
+
+
 With Shipink, e-commerce companies can streamline their shipping processes and provide a better overall experience for their customers.
 
 == Installation ==
 
-1. Upload the plugin files to the `/wp-content/plugins/sendcloud` directory,
+1. Upload the plugin files to the `/wp-content/plugins/shipink` directory,
 2. Activate the plugin through the 'Plugins' screen in WordPress or install the plugin through the WordPress plugins screen directly (recommended).
 
 == Frequently Asked Questions ==
