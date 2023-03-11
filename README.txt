@@ -13,10 +13,10 @@ Shipink is a new and innovative way for e-commerce companies to easily integrate
 
 [youtube https://www.youtube.com/watch?v=arJ7d_5ddJI]
 
-Shipink is a new and innovative way for e-commerce companies to easily integrate and use the shipping companies they want to work with.
+[Shipink](https://shipink.io/) is a new and innovative way for e-commerce companies to easily integrate and use the shipping companies they want to work with.
 
 Shipink Overview
-*   Get discounted shipping rates in Turkey
+*   Get discounted shipping rates in Türkiye
 *   Easily automate shipping processes and print labels
 *   Impress customers with modern tracking emails and pages
 *   Visualize average fulfillment and delivery times, as well as costs
@@ -28,10 +28,10 @@ Supported Carriers:
 *   Yurtiçi Kargo
 *   PTT
 *   Sendeo
-*   Octovan Express
 *   UPS Global
 *   Fedex
 *   Aramex
+*   and [more](https://shipink.io/carriers/)
 
 
 With Shipink, e-commerce companies can streamline their shipping processes and provide a better overall experience for their customers.
