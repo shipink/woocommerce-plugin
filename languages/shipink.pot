@@ -1,0 +1,7 @@
+msgid "Shipped"
+msgstr ""
+
+msgid "Shipped (%s)"
+msgid_plural "Shipped (%s)"
+msgstr[0] ""
+msgstr[1] ""
