@@ -28,6 +28,8 @@ Supported Carriers:
 *   Yurtiçi Kargo
 *   PTT
 *   Sendeo
+*   Kolay Gelsin
+*   Sürat Kargo
 *   UPS Global
 *   Fedex
 *   Aramex
@@ -56,7 +58,7 @@ The plugin is tested on WooCommerce version 2.4 to 6.4.1
 == Changelog ==
 
 = 1.1.0 =
-* Added Shipped Order Status for WooCommerce
+* Added "Shipped" order status for WooCommerce
 * Added support for WordPress 6.4.1
 
 = 1.0.0 =
