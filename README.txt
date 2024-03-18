@@ -1,10 +1,10 @@
 === Shipink ===
-Version: 1.1.0
+Version: 1.2.0
 Contributors: shipink
 Tags: shipink,shipping,woocommerce,kargo,yurtiçi,aras,sendeo,octovan,ups,fedex,aramex,ptt,mng,shipping price,shipping cost,kargo ücreti,kargo takip,shipping api,kargo entegrasyonu,shipping label,kargo etiketi,kargo fişi,ihracat,eihracat,mikro ihracat,yurtdışı kargo,kargo fiyat hesaplama,shipping cost
 Requires at least: 4.5.0
 Tested up to: 6.4.3
-Stable tag: 1.1.0
+Stable tag: 1.2.0
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
