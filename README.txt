@@ -3,7 +3,7 @@ Version: 1.1.0
 Contributors: shipink
 Tags: shipink,shipping,woocommerce,kargo,yurtiçi,aras,sendeo,octovan,ups,fedex,aramex,ptt,mng,shipping price,shipping cost,kargo ücreti,kargo takip,shipping api,kargo entegrasyonu,shipping label,kargo etiketi,kargo fişi,ihracat,eihracat,mikro ihracat,yurtdışı kargo,kargo fiyat hesaplama,shipping cost
 Requires at least: 4.5.0
-Tested up to: 6.4.1
+Tested up to: 6.4.3
 Stable tag: 1.1.0
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -47,7 +47,7 @@ With Shipink, e-commerce companies can streamline their shipping processes and p
 
 = What WooCommerce version does the plugin support? =
 
-The plugin is tested on WooCommerce version 2.4 to 6.4.1
+The plugin is tested on WooCommerce version 2.4 to 6.4.3
 
 == Screenshots ==
 
@@ -56,6 +56,10 @@ The plugin is tested on WooCommerce version 2.4 to 6.4.1
 3. Sync and manage you orders across all your sales channels
 
 == Changelog ==
+
+= 1.2.0 =
+* Added "Tracking" button for WooCommerce Orders Page
+* Added support for WordPress 6.4.3
 
 = 1.1.0 =
 * Added "Shipped" order status for WooCommerce

@@ -239,7 +239,9 @@ class Shipink
         add_action('init', array($this, 'custom_register_order_shipped_status'));
         add_action('woocommerce_order_actions', array($this, 'wdm_add_order_meta_box_actions'));
         add_filter('wc_order_statuses', array($this, 'add_shipped_to_order_statuses'));
-
+        add_filter('woocommerce_admin_order_actions', array($this, 'add_tracking_action_to_order_list'), 10, 2);
+        add_action('woocommerce_order_details_after_order_table', array($this, 'add_tracking_info_to_order_details'), 10, 1);
+        add_filter('woocommerce_my_account_my_orders_actions', array($this, 'add_custom_tracking_button_to_orders'), 10, 2);
     }
 
     public function create_admin_menu()
@@ -431,4 +433,36 @@ class Shipink
         return $new_order_statuses;
     }
 
+    function add_tracking_action_to_order_list($actions, $order)
+    {
+        $tracking_url = get_post_meta($order->get_id(), 'shipink_tracking_url', true);
+        if (!empty($tracking_url)) {
+            $actions['shipink_tracking'] = array(
+                'url' => $tracking_url,
+                'name' => __('Tracking', 'shipink'),
+                'action' => 'link',
+            );
+        }
+        return $actions;
+    }
+
+    function add_tracking_info_to_order_details($order)
+    {
+        $tracking_url = get_post_meta($order->get_id(), 'shipink_tracking_url', true);
+        if (!empty($tracking_url)) {
+            echo '<p class="order-tracking"><strong>' . __('Tracking', 'shipink') . '</strong> <a href="' . esc_url($tracking_url) . '" target="_blank">' . esc_url($tracking_url) . '</a></p>';
+        }
+    }
+
+    function add_custom_tracking_button_to_orders($actions, $order)
+    {
+        $tracking_url = get_post_meta($order->get_id(), 'shipink_tracking_url', true);
+        if (!empty($tracking_url)) {
+            $actions['shipink_tracking'] = array(
+                'url' => $tracking_url,
+                'name' => __('TRACKING', 'shipink')
+            );
+        }
+        return $actions;
+    }
 }
