@@ -5,3 +5,9 @@ msgid "Shipped (%s)"
 msgid_plural "Shipped (%s)"
 msgstr[0] ""
 msgstr[1] ""
+
+msgid "Tracking"
+msgstr "Tracking"
+
+msgid "TRACKING"
+msgstr "TRACKING"

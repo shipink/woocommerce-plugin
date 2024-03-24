@@ -22,3 +22,6 @@ msgstr[1] "Shipped (%s)"
 
 msgid "Tracking"
 msgstr "Tracking"
+
+msgid "TRACKING"
+msgstr "TRACKING"

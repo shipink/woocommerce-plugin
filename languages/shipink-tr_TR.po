@@ -21,4 +21,7 @@ msgstr[0] "Kargolandı (%s)"
 msgstr[1] "Kargolandı (%s)"
 
 msgid "Tracking"
-msgstr "Kargo Takibi"
+msgstr "Kargo Takip"
+
+msgid "TRACKING"
+msgstr "KARGO TAKİP"
