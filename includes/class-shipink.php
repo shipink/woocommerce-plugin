@@ -7,7 +7,7 @@
  * public-facing side of the site and the admin area.
  *
  * @link       https://shipink.io
- * @since      1.2.0
+ * @since      1.3.0
  *
  * @package    Shipink
  * @subpackage Shipink/includes
@@ -22,7 +22,7 @@
  * Also maintains the unique identifier of this plugin as well as the current
  * version of the plugin.
  *
- * @since      1.2.0
+ * @since      1.3.0
  * @package    Shipink
  * @subpackage Shipink/includes
  * @author     Shipink <info@shipink.com>
@@ -34,7 +34,7 @@ class Shipink
      * The loader that's responsible for maintaining and registering all hooks that power
      * the plugin.
      *
-     * @since    1.2.0
+     * @since    1.3.0
      * @access   protected
      * @var      Shipink_Loader $loader Maintains and registers all hooks for the plugin.
      */
@@ -43,7 +43,7 @@ class Shipink
     /**
      * The unique identifier of this plugin.
      *
-     * @since    1.2.0
+     * @since    1.3.0
      * @access   protected
      * @var      string $plugin_name The string used to uniquely identify this plugin.
      */
@@ -52,7 +52,7 @@ class Shipink
     /**
      * The current version of the plugin.
      *
-     * @since    1.2.0
+     * @since    1.3.0
      * @access   protected
      * @var      string $version The current version of the plugin.
      */
@@ -65,14 +65,14 @@ class Shipink
      * Load the dependencies, define the locale, and set the hooks for the admin area and
      * the public-facing side of the site.
      *
-     * @since    1.2.0
+     * @since    1.3.0
      */
     public function __construct()
     {
         if (defined('SHIPINK_VERSION')) {
             $this->version = SHIPINK_VERSION;
         } else {
-            $this->version = '1.2.0';
+            $this->version = '1.3.0';
         }
         $this->plugin_name = 'shipink';
 
@@ -98,7 +98,7 @@ class Shipink
      * Create an instance of the loader which will be used to register the hooks
      * with WordPress.
      *
-     * @since    1.2.0
+     * @since    1.3.0
      * @access   private
      */
     private function load_dependencies()
@@ -137,7 +137,7 @@ class Shipink
      * Uses the Shipink_i18n class in order to set the domain and to register the hook
      * with WordPress.
      *
-     * @since    1.2.0
+     * @since    1.3.0
      * @access   private
      */
     private function set_locale()
@@ -153,7 +153,7 @@ class Shipink
      * Register all of the hooks related to the admin area functionality
      * of the plugin.
      *
-     * @since    1.2.0
+     * @since    1.3.0
      * @access   private
      */
     private function define_admin_hooks()
@@ -170,7 +170,7 @@ class Shipink
      * Register all of the hooks related to the public-facing functionality
      * of the plugin.
      *
-     * @since    1.2.0
+     * @since    1.3.0
      * @access   private
      */
     private function define_public_hooks()
@@ -186,7 +186,7 @@ class Shipink
     /**
      * Run the loader to execute all of the hooks with WordPress.
      *
-     * @since    1.2.0
+     * @since    1.3.0
      */
     public function run()
     {
@@ -198,7 +198,7 @@ class Shipink
      * WordPress and to define internationalization functionality.
      *
      * @return    string    The name of the plugin.
-     * @since     1.2.0
+     * @since     1.3.0
      */
     public function get_plugin_name()
     {
@@ -209,7 +209,7 @@ class Shipink
      * The reference to the class that orchestrates the hooks with the plugin.
      *
      * @return    Shipink_Loader    Orchestrates the hooks of the plugin.
-     * @since     1.2.0
+     * @since     1.3.0
      */
     public function get_loader()
     {
@@ -220,7 +220,7 @@ class Shipink
      * Retrieve the version number of the plugin.
      *
      * @return    string    The version number of the plugin.
-     * @since     1.2.0
+     * @since     1.3.0
      */
     public function get_version()
     {
