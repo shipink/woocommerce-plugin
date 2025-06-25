@@ -4,7 +4,7 @@
  * Fired during plugin activation
  *
  * @link       https://shipink.io
- * @since      1.4.0
+ * @since      1.5.0
  *
  * @package    Shipink
  * @subpackage Shipink/includes
@@ -15,7 +15,7 @@
  *
  * This class defines all code necessary to run during the plugin's activation.
  *
- * @since      1.4.0
+ * @since      1.5.0
  * @package    Shipink
  * @subpackage Shipink/includes
  * @author     Shipink <info@shipink.com>
@@ -27,7 +27,7 @@ class Shipink_Activator {
 	 *
 	 * Long Description.
 	 *
-	 * @since    1.4.0
+	 * @since    1.5.0
 	 */
 	public static function activate() {
 

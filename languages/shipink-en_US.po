@@ -25,3 +25,96 @@ msgstr "Tracking"
 
 msgid "TRACKING"
 msgstr "TRACKING"
+
+msgid "Connect Shipink"
+msgstr "Connect Shipink"
+
+msgid "Open Shipink Dashboard"
+msgstr "Open Shipink Dashboard"
+
+msgid "Shipink is a platform that connects multiple carriers and sales channels and provides an easy-to-use interface to manage all of your label creation, tracking, returns, and many more."
+msgstr "Shipink is a platform that connects multiple carriers and sales channels and provides an easy-to-use interface to manage all of your label creation, tracking, returns, and many more."
+
+msgid "Access your Shipink dashboard to manage shipments, track orders, and configure shipping settings."
+msgstr "Access your Shipink dashboard to manage shipments, track orders, and configure shipping settings."
+
+msgid "Shipink Multi-Carrier Shipping"
+msgstr "Shipink Multi-Carrier Shipping"
+
+msgid "Complete shipping solution for e-commerce"
+msgstr "Complete shipping solution for e-commerce"
+
+msgid "Connected"
+msgstr "Connected"
+
+msgid "Not Connected"
+msgstr "Not Connected"
+
+msgid "Complete Shipping Solution"
+msgstr "Complete Shipping Solution"
+
+msgid "Order Management"
+msgstr "Order Management"
+
+msgid "Ship e-commerce orders easily from one place to shorten fulfillment time"
+msgstr "Ship e-commerce orders easily from one place to shorten fulfillment time"
+
+msgid "All Labels in One Place"
+msgstr "All Labels in One Place"
+
+msgid "Manage shipping labels for various global carriers like Aras, MNG, UPS, Aramex, or FedEx with just a few clicks"
+msgstr "Manage shipping labels for various global carriers like Aras, MNG, UPS, Aramex, or FedEx with just a few clicks"
+
+msgid "Best Shipping Rates"
+msgstr "Best Shipping Rates"
+
+msgid "Find the cheapest or fastest shipping company for your shipment with up to 60% discounts"
+msgstr "Find the cheapest or fastest shipping company for your shipment with up to 60% discounts"
+
+msgid "Advanced Tracking"
+msgstr "Advanced Tracking"
+
+msgid "Track all packages in one place with branded tracking pages and automatic notifications"
+msgstr "Track all packages in one place with branded tracking pages and automatic notifications"
+
+msgid "International Shipping"
+msgstr "International Shipping"
+
+msgid "Save cost and time on international shipping with many carriers worldwide"
+msgstr "Save cost and time on international shipping with many carriers worldwide"
+
+msgid "Multi-carrier API"
+msgstr "Multi-carrier API"
+
+msgid "Shipping APIs designed for developers to integrate carriers worldwide"
+msgstr "Shipping APIs designed for developers to integrate carriers worldwide"
+
+msgid "Supported Carriers"
+msgstr "Supported Carriers"
+
+msgid "Dashboard Access"
+msgstr "Dashboard Access"
+
+msgid "Get Started"
+msgstr "Get Started"
+
+msgid "Connect your WooCommerce store to Shipink and start shipping with multiple carriers in minutes. Pay as you receive orders!"
+msgstr "Connect your WooCommerce store to Shipink and start shipping with multiple carriers in minutes. Pay as you receive orders!"
+
+msgid "Connect to Shipink"
+msgstr "Connect to Shipink"
+
+msgid "Pay as you receive orders"
+msgstr "Pay as you receive orders"
+
+msgid "No credit card required"
+msgstr "No credit card required"
+
+msgid "Up to 60% shipping discounts"
+msgstr "Up to 60% shipping discounts"
+
+msgid "98% customer satisfaction"
+msgstr "98% customer satisfaction"
+
+msgid "Easy WooCommerce integration"
+msgstr "Easy WooCommerce integration"

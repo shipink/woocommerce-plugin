@@ -25,3 +25,96 @@ msgstr "Kargo Takip"
 
 msgid "TRACKING"
 msgstr "KARGO TAKİP"
+
+msgid "Connect Shipink"
+msgstr "Shipink'e Bağlan"
+
+msgid "Open Shipink Dashboard"
+msgstr "Shipink Panelini Aç"
+
+msgid "Shipink is a platform that connects multiple carriers and sales channels and provides an easy-to-use interface to manage all of your label creation, tracking, returns, and many more."
+msgstr "Shipink, birden fazla kargo şirketini ve satış kanalını birbirine bağlayan ve etiket oluşturma, takip, iade ve daha birçok işlemi yönetmek için kullanımı kolay bir arayüz sağlayan bir platformdur."
+
+msgid "Access your Shipink dashboard to manage shipments, track orders, and configure shipping settings."
+msgstr "Kargolarınızı yönetmek, siparişleri takip etmek ve kargo ayarlarını yapılandırmak için Shipink panonuza erişin."
+
+msgid "Shipink Multi-Carrier Shipping"
+msgstr "Shipink Çoklu Kargo Entegrasyonu"
+
+msgid "Complete shipping solution for e-commerce"
+msgstr "E-ticaret için eksiksiz kargo çözümü"
+
+msgid "Connected"
+msgstr "Bağlandı"
+
+msgid "Not Connected"
+msgstr "Bağlanmadı"
+
+msgid "Complete Shipping Solution"
+msgstr "Eksiksiz Kargo Çözümü"
+
+msgid "Order Management"
+msgstr "Sipariş Yönetimi"
+
+msgid "Ship e-commerce orders easily from one place to shorten fulfillment time"
+msgstr "E-ticaret siparişlerini tek yerden kolayca gönderin ve karşılama süresini kısaltın"
+
+msgid "All Labels in One Place"
+msgstr "Tüm Etiketler Tek Yerde"
+
+msgid "Manage shipping labels for various global carriers like Aras, MNG, UPS, Aramex, or FedEx with just a few clicks"
+msgstr "Aras, MNG, UPS, Aramex veya FedEx gibi çeşitli küresel kargo şirketleri için kargo etiketlerini sadece birkaç tıklamayla yönetin"
+
+msgid "Best Shipping Rates"
+msgstr "En İyi Kargo Ücretleri"
+
+msgid "Find the cheapest or fastest shipping company for your shipment with up to 60% discounts"
+msgstr "Kargonuz için %60'a varan indirimlerle en ucuz veya en hızlı kargo şirketini bulun"
+
+msgid "Advanced Tracking"
+msgstr "Gelişmiş Takip"
+
+msgid "Track all packages in one place with branded tracking pages and automatic notifications"
+msgstr "Markalı takip sayfaları ve otomatik bildirimlerle tüm paketleri tek yerden takip edin"
+
+msgid "International Shipping"
+msgstr "Uluslararası Kargo"
+
+msgid "Save cost and time on international shipping with many carriers worldwide"
+msgstr "Dünya çapında birçok kargo şirketi ile uluslararası kargoda maliyet ve zaman tasarrufu yapın"
+
+msgid "Multi-carrier API"
+msgstr "Çoklu Kargo API'si"
+
+msgid "Shipping APIs designed for developers to integrate carriers worldwide"
+msgstr "Geliştiricilerin dünya çapında kargo şirketlerini entegre etmesi için tasarlanmış kargo API'leri"
+
+msgid "Supported Carriers"
+msgstr "Desteklenen Kargo Şirketleri"
+
+msgid "Dashboard Access"
+msgstr "Panel Erişimi"
+
+msgid "Get Started"
+msgstr "Başlayın"
+
+msgid "Connect your WooCommerce store to Shipink and start shipping with multiple carriers in minutes. Pay as you receive orders!"
+msgstr "WooCommerce mağazanızı Shipink'e bağlayın ve dakikalar içinde birden fazla kargo şirketi ile gönderim yapmaya başlayın. Sipariş aldıkça ödeyin!"
+
+msgid "Connect to Shipink"
+msgstr "Shipink'e Bağlan"
+
+msgid "Pay as you receive orders"
+msgstr "Sipariş aldıkça ödeyin"
+
+msgid "No credit card required"
+msgstr "Kredi kartı gerekmez"
+
+msgid "Up to 60% shipping discounts"
+msgstr "%60'a varan kargo indirimleri"
+
+msgid "98% customer satisfaction"
+msgstr "%98 müşteri memnuniyeti"
+
+msgid "Easy WooCommerce integration"
+msgstr "Kolay WooCommerce entegrasyonu"

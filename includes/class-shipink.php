@@ -7,7 +7,7 @@
  * public-facing side of the site and the admin area.
  *
  * @link       https://shipink.io
- * @since      1.4.0
+ * @since      1.5.0
  *
  * @package    Shipink
  * @subpackage Shipink/includes
@@ -22,7 +22,7 @@
  * Also maintains the unique identifier of this plugin as well as the current
  * version of the plugin.
  *
- * @since      1.4.0
+ * @since      1.5.0
  * @package    Shipink
  * @subpackage Shipink/includes
  * @author     Shipink <info@shipink.com>
@@ -34,7 +34,7 @@ class Shipink
      * The loader that's responsible for maintaining and registering all hooks that power
      * the plugin.
      *
-     * @since    1.4.0
+     * @since    1.5.0
      * @access   protected
      * @var      Shipink_Loader $loader Maintains and registers all hooks for the plugin.
      */
@@ -43,7 +43,7 @@ class Shipink
     /**
      * The unique identifier of this plugin.
      *
-     * @since    1.4.0
+     * @since    1.5.0
      * @access   protected
      * @var      string $plugin_name The string used to uniquely identify this plugin.
      */
@@ -52,7 +52,7 @@ class Shipink
     /**
      * The current version of the plugin.
      *
-     * @since    1.4.0
+     * @since    1.5.0
      * @access   protected
      * @var      string $version The current version of the plugin.
      */
@@ -65,14 +65,14 @@ class Shipink
      * Load the dependencies, define the locale, and set the hooks for the admin area and
      * the public-facing side of the site.
      *
-     * @since    1.4.0
+     * @since    1.5.0
      */
     public function __construct()
     {
         if (defined('SHIPINK_VERSION')) {
             $this->version = SHIPINK_VERSION;
         } else {
-            $this->version = '1.4.0';
+            $this->version = '1.5.0';
         }
         $this->plugin_name = 'shipink';
 
@@ -98,7 +98,7 @@ class Shipink
      * Create an instance of the loader which will be used to register the hooks
      * with WordPress.
      *
-     * @since    1.4.0
+     * @since    1.5.0
      * @access   private
      */
     private function load_dependencies()
@@ -137,7 +137,7 @@ class Shipink
      * Uses the Shipink_i18n class in order to set the domain and to register the hook
      * with WordPress.
      *
-     * @since    1.4.0
+     * @since    1.5.0
      * @access   private
      */
     private function set_locale()
@@ -153,7 +153,7 @@ class Shipink
      * Register all of the hooks related to the admin area functionality
      * of the plugin.
      *
-     * @since    1.4.0
+     * @since    1.5.0
      * @access   private
      */
     private function define_admin_hooks()
@@ -170,7 +170,7 @@ class Shipink
      * Register all of the hooks related to the public-facing functionality
      * of the plugin.
      *
-     * @since    1.4.0
+     * @since    1.5.0
      * @access   private
      */
     private function define_public_hooks()
@@ -186,7 +186,7 @@ class Shipink
     /**
      * Run the loader to execute all of the hooks with WordPress.
      *
-     * @since    1.4.0
+     * @since    1.5.0
      */
     public function run()
     {
@@ -198,7 +198,7 @@ class Shipink
      * WordPress and to define internationalization functionality.
      *
      * @return    string    The name of the plugin.
-     * @since     1.4.0
+     * @since     1.5.0
      */
     public function get_plugin_name()
     {
@@ -209,7 +209,7 @@ class Shipink
      * The reference to the class that orchestrates the hooks with the plugin.
      *
      * @return    Shipink_Loader    Orchestrates the hooks of the plugin.
-     * @since     1.4.0
+     * @since     1.5.0
      */
     public function get_loader()
     {
@@ -220,7 +220,7 @@ class Shipink
      * Retrieve the version number of the plugin.
      *
      * @return    string    The version number of the plugin.
-     * @since     1.4.0
+     * @since     1.5.0
      */
     public function get_version()
     {
@@ -259,9 +259,51 @@ class Shipink
 
     public function shipink_admin_page()
     {
+        $is_connected = $this->is_shipink_connected();
         $file = rtrim(plugin_dir_path(__DIR__), '/') . '/public/views/wc-settings/shipink-page.php';
-        $html = $this->render($file);
-        echo wp_kses($html, array($this, 'get_allowed_tags'));
+        $html = $this->render($file, array('is_connected' => $is_connected));
+        echo wp_kses($html, $this->get_allowed_tags());
+    }
+
+    /**
+     * Check if Shipink is connected by looking for API keys in WooCommerce
+     *
+     * @return bool True if connected, false otherwise
+     * @since 1.5.0
+     */
+    private function is_shipink_connected()
+    {
+        global $wpdb;
+        
+        // Check WooCommerce API keys table for Shipink-related keys
+        $api_keys = $wpdb->get_results(
+            $wpdb->prepare(
+                "SELECT * FROM {$wpdb->prefix}woocommerce_api_keys 
+                 WHERE description LIKE %s 
+                 AND permissions IN ('read_write', 'write')
+                 AND truncated_key IS NOT NULL",
+                '%shipink%'
+            )
+        );
+        
+        if (!empty($api_keys)) {
+            return true;
+        }
+        
+        // Alternative check: Look for Shipink-related options
+        $shipink_settings = get_option('woocommerce_shipink_settings');
+        if (!empty($shipink_settings)) {
+            return true;
+        }
+        
+        // Check for user meta indicating connection
+        $user_id = get_current_user_id();
+        $user_shipink_data = get_user_meta($user_id, 'shipink_connected', true);
+        if (!empty($user_shipink_data)) {
+            return true;
+        }
+        
+        return false;
     }
 
     public function get_allowed_tags()
@@ -286,6 +328,7 @@ class Shipink
                 'class' => array(),
                 'id' => array(),
                 'disabled' => array(),
+                'data-url' => array(),
             ),
             'cite' => array(
                 'title' => array(),
@@ -398,8 +441,14 @@ class Shipink
         );
     }
 
-    public function render($file)
+    public function render($file, $variables = array())
     {
+        // Extract variables to make them available in the template
+        if (!empty($variables)) {
+            extract($variables);
+        }
+        
+        // Start output buffering to capture the template output
         require $file;
     }
 

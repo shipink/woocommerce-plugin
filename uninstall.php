@@ -20,7 +20,7 @@
  * https://github.com/tommcfarlin/WordPress-Plugin-Boilerplate/pull/123#issuecomment-28541913
  *
  * @link       https://shipink.io
- * @since      1.4.0
+ * @since      1.5.0
  *
  * @package    Shipink
  */

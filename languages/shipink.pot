@@ -7,7 +7,100 @@ msgstr[0] ""
 msgstr[1] ""
 
 msgid "Tracking"
-msgstr "Tracking"
+msgstr ""
 
 msgid "TRACKING"
-msgstr "TRACKING"
+msgstr ""
+
+msgid "Connect Shipink"
+msgstr ""
+
+msgid "Open Shipink Dashboard"
+msgstr ""
+
+msgid "Shipink is a platform that connects multiple carriers and sales channels and provides an easy-to-use interface to manage all of your label creation, tracking, returns, and many more."
+msgstr ""
+
+msgid "Access your Shipink dashboard to manage shipments, track orders, and configure shipping settings."
+msgstr ""
+
+msgid "Shipink Multi-Carrier Shipping"
+msgstr ""
+
+msgid "Complete shipping solution for e-commerce"
+msgstr ""
+
+msgid "Connected"
+msgstr ""
+
+msgid "Not Connected"
+msgstr ""
+
+msgid "Complete Shipping Solution"
+msgstr ""
+
+msgid "Order Management"
+msgstr ""
+
+msgid "Ship e-commerce orders easily from one place to shorten fulfillment time"
+msgstr ""
+
+msgid "All Labels in One Place"
+msgstr ""
+
+msgid "Manage shipping labels for various global carriers like Aras, MNG, UPS, Aramex, or FedEx with just a few clicks"
+msgstr ""
+
+msgid "Best Shipping Rates"
+msgstr ""
+
+msgid "Find the cheapest or fastest shipping company for your shipment with up to 60% discounts"
+msgstr ""
+
+msgid "Advanced Tracking"
+msgstr ""
+
+msgid "Track all packages in one place with branded tracking pages and automatic notifications"
+msgstr ""
+
+msgid "International Shipping"
+msgstr ""
+
+msgid "Save cost and time on international shipping with many carriers worldwide"
+msgstr ""
+
+msgid "Multi-carrier API"
+msgstr ""
+
+msgid "Shipping APIs designed for developers to integrate carriers worldwide"
+msgstr ""
+
+msgid "Supported Carriers"
+msgstr ""
+
+msgid "Dashboard Access"
+msgstr ""
+
+msgid "Get Started"
+msgstr ""
+
+msgid "Connect your WooCommerce store to Shipink and start shipping with multiple carriers in minutes. Pay as you receive orders!"
+msgstr ""
+
+msgid "Connect to Shipink"
+msgstr ""
+
+msgid "Pay as you receive orders"
+msgstr ""
+
+msgid "No credit card required"
+msgstr ""
+
+msgid "Up to 60% shipping discounts"
+msgstr ""
+
+msgid "98% customer satisfaction"
+msgstr ""
+
+msgid "Easy WooCommerce integration"
+msgstr ""
