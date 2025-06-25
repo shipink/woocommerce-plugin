@@ -54,8 +54,6 @@ $connection_status = isset($is_connected) && $is_connected;
     width: 60px;
     height: 60px;
     background: #fff;
-    border: 2px solid #e0e0e0;
-    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -314,7 +312,7 @@ $connection_status = isset($is_connected) && $is_connected;
     <div class="shipink-header">
         <div class="shipink-logo-section">
             <div class="shipink-logo">
-                <img src="https://shipink.io/favicon.ico" alt="Shipink Logo" />
+                <img src="https://app.shipink.io/logo-icon-login.svg" alt="Shipink Logo" />
             </div>
             <div class="shipink-title-section">
                 <h1><?php _e('Shipink Multi-Carrier Shipping', 'shipink'); ?></h1>
@@ -415,11 +413,9 @@ $connection_status = isset($is_connected) && $is_connected;
                 <?php endif; ?>
             </p>
 
-            <a href="<?php echo esc_url($target_url); ?>" 
-               class="connect-button <?php echo $connection_status ? 'connected' : ''; ?>" 
-               target="_blank">
+            <button class="connect-button <?php echo $connection_status ? 'connected' : ''; ?>">
                 <?php echo esc_html($button_text); ?>
-            </a>
+            </button>
 
             <?php if (!$connection_status): ?>
             <ul class="benefits-list">
@@ -436,15 +432,8 @@ $connection_status = isset($is_connected) && $is_connected;
 
 <script type="text/javascript">
 jQuery(document).ready(function ($) {
-    // Add any additional JavaScript functionality here
     $('.connect-button').on('click', function(e) {
-        // Track connection attempt if needed
-        if (typeof gtag !== 'undefined') {
-            gtag('event', 'shipink_connect_click', {
-                'event_category': 'shipping',
-                'event_label': 'connect_attempt'
-            });
-        }
+		window.location.href = '<?php  echo $target_url; ?>';
     });
 });
 </script>
