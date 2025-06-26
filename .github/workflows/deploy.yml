@@ -17,7 +17,7 @@ jobs:
           fetch-depth: 0
 
       - name: Deploy to WordPress Plugin Directory
-        uses: 10up/action-wordpress-plugin-deploy@v2.2.0
+        uses: 10up/action-wordpress-plugin-deploy@2.2.0
         with:
           plugin_slug: shipink
           svn_username: ${{ secrets.SVN_USERNAME }}
