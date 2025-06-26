@@ -1,0 +1,24 @@
+name: Deploy to WordPress Plugin Directory
+
+on:
+  push:
+    tags:
+      - "*"
+
+jobs:
+  deploy:
+    name: WordPress Plugin Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Deploy to WordPress Plugin Directory
+        uses: 10up/action-wordpress-plugin-deploy@v1
+        with:
+          plugin_slug: shipink
+          svn_username: ${{ secrets.SVN_USERNAME }}
+          svn_password: ${{ secrets.SVN_PASSWORD }}
