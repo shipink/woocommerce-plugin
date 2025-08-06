@@ -6,7 +6,7 @@
  * This file is used to markup the public-facing aspects of the plugin.
  *
  * @link       https://shipink.io
- * @since      1.5.0
+ * @since      1.5.1
  *
  * @package    Shipink
  * @subpackage Shipink/public/partials

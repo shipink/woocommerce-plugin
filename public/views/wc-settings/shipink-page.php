@@ -266,6 +266,29 @@ $connection_status = isset($is_connected) && $is_connected;
     box-shadow: 0 4px 12px rgba(76, 175, 80, 0.4);
 }
 
+.reconnect-button {
+    width: 100%;
+    padding: 8px 16px;
+    background: transparent;
+    color: #646970;
+    border: 1px solid #ccd0d4;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.reconnect-button:hover {
+    background: #f6f7f7;
+    color: #1d2327;
+    border-color: #8c8f94;
+}
+
 .benefits-list {
     list-style: none;
     padding: 0;
@@ -417,6 +440,12 @@ $connection_status = isset($is_connected) && $is_connected;
                 <?php echo esc_html($button_text); ?>
             </button>
 
+            <?php if ($connection_status): ?>
+            <button class="reconnect-button" style="margin-top: 10px;">
+                <?php _e('Reconnect Shipink', 'shipink'); ?>
+            </button>
+            <?php endif; ?>
+
             <?php if (!$connection_status): ?>
             <ul class="benefits-list">
                 <li><?php _e('Pay as you receive orders', 'shipink'); ?></li>
@@ -434,6 +463,10 @@ $connection_status = isset($is_connected) && $is_connected;
 jQuery(document).ready(function ($) {
     $('.connect-button').on('click', function(e) {
 		window.location.href = '<?php  echo $target_url; ?>';
+    });
+    
+    $('.reconnect-button').on('click', function(e) {
+		window.location.href = 'https://app.shipink.io/signup?<?php echo $connectQuery; ?>';
     });
 });
 </script>

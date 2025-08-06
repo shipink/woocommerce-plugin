@@ -7,7 +7,7 @@
  * public-facing side of the site and the admin area.
  *
  * @link       https://shipink.io
- * @since      1.5.0
+ * @since      1.5.1
  *
  * @package    Shipink
  * @subpackage Shipink/includes
@@ -22,7 +22,7 @@
  * Also maintains the unique identifier of this plugin as well as the current
  * version of the plugin.
  *
- * @since      1.5.0
+ * @since      1.5.1
  * @package    Shipink
  * @subpackage Shipink/includes
  * @author     Shipink <info@shipink.com>
@@ -34,7 +34,7 @@ class Shipink
      * The loader that's responsible for maintaining and registering all hooks that power
      * the plugin.
      *
-     * @since    1.5.0
+     * @since    1.5.1
      * @access   protected
      * @var      Shipink_Loader $loader Maintains and registers all hooks for the plugin.
      */
@@ -43,7 +43,7 @@ class Shipink
     /**
      * The unique identifier of this plugin.
      *
-     * @since    1.5.0
+     * @since    1.5.1
      * @access   protected
      * @var      string $plugin_name The string used to uniquely identify this plugin.
      */
@@ -52,7 +52,7 @@ class Shipink
     /**
      * The current version of the plugin.
      *
-     * @since    1.5.0
+     * @since    1.5.1
      * @access   protected
      * @var      string $version The current version of the plugin.
      */
@@ -65,14 +65,14 @@ class Shipink
      * Load the dependencies, define the locale, and set the hooks for the admin area and
      * the public-facing side of the site.
      *
-     * @since    1.5.0
+     * @since    1.5.1
      */
     public function __construct()
     {
         if (defined('SHIPINK_VERSION')) {
             $this->version = SHIPINK_VERSION;
         } else {
-            $this->version = '1.5.0';
+            $this->version = '1.5.1';
         }
         $this->plugin_name = 'shipink';
 
@@ -98,7 +98,7 @@ class Shipink
      * Create an instance of the loader which will be used to register the hooks
      * with WordPress.
      *
-     * @since    1.5.0
+     * @since    1.5.1
      * @access   private
      */
     private function load_dependencies()
@@ -137,7 +137,7 @@ class Shipink
      * Uses the Shipink_i18n class in order to set the domain and to register the hook
      * with WordPress.
      *
-     * @since    1.5.0
+     * @since    1.5.1
      * @access   private
      */
     private function set_locale()
@@ -153,7 +153,7 @@ class Shipink
      * Register all of the hooks related to the admin area functionality
      * of the plugin.
      *
-     * @since    1.5.0
+     * @since    1.5.1
      * @access   private
      */
     private function define_admin_hooks()
@@ -170,7 +170,7 @@ class Shipink
      * Register all of the hooks related to the public-facing functionality
      * of the plugin.
      *
-     * @since    1.5.0
+     * @since    1.5.1
      * @access   private
      */
     private function define_public_hooks()
@@ -186,7 +186,7 @@ class Shipink
     /**
      * Run the loader to execute all of the hooks with WordPress.
      *
-     * @since    1.5.0
+     * @since    1.5.1
      */
     public function run()
     {
@@ -198,7 +198,7 @@ class Shipink
      * WordPress and to define internationalization functionality.
      *
      * @return    string    The name of the plugin.
-     * @since     1.5.0
+     * @since     1.5.1
      */
     public function get_plugin_name()
     {
@@ -209,7 +209,7 @@ class Shipink
      * The reference to the class that orchestrates the hooks with the plugin.
      *
      * @return    Shipink_Loader    Orchestrates the hooks of the plugin.
-     * @since     1.5.0
+     * @since     1.5.1
      */
     public function get_loader()
     {
@@ -220,7 +220,7 @@ class Shipink
      * Retrieve the version number of the plugin.
      *
      * @return    string    The version number of the plugin.
-     * @since     1.5.0
+     * @since     1.5.1
      */
     public function get_version()
     {
@@ -236,9 +236,9 @@ class Shipink
 
     private function load_shipink_wc_status()
     {
-        add_action('init', array($this, 'custom_register_order_shipped_status'));
+        add_action('init', array($this, 'custom_register_order_missing_status'));
         add_action('woocommerce_order_actions', array($this, 'wdm_add_order_meta_box_actions'));
-        add_filter('wc_order_statuses', array($this, 'add_shipped_to_order_statuses'));
+        add_filter('wc_order_statuses', array($this, 'add_missing_to_order_statuses'));
         add_filter('woocommerce_admin_order_actions', array($this, 'add_tracking_action_to_order_list'), 10, 2);
         add_action('woocommerce_order_details_after_order_table', array($this, 'add_tracking_info_to_order_details'), 10, 1);
         add_filter('woocommerce_my_account_my_orders_actions', array($this, 'add_custom_tracking_button_to_orders'), 10, 2);
@@ -269,7 +269,7 @@ class Shipink
      * Check if Shipink is connected by looking for API keys in WooCommerce
      *
      * @return bool True if connected, false otherwise
-     * @since 1.5.0
+     * @since 1.5.1
      */
     private function is_shipink_connected()
     {
@@ -452,7 +452,7 @@ class Shipink
         require $file;
     }
 
-    function custom_register_order_shipped_status()
+    function custom_register_order_missing_status()
     {
         register_post_status('wc-shipped', array(
             'label' => __('Shipped', 'shipink'),
@@ -462,21 +462,32 @@ class Shipink
             'show_in_admin_status_list' => true,
             'label_count' => _n_noop('Shipped (%s)', 'Shipped (%s)', 'shipink')
         ));
+
+        register_post_status('wc-partially-shipped', array(
+            'label' => __('Partially Shipped', 'shipink'),
+            'public' => true,
+            'exclude_from_search' => false,
+            'show_in_admin_all_list' => true,
+            'show_in_admin_status_list' => true,
+            'label_count' => _n_noop('Partially Shipped (%s)', 'Partially Shipped (%s)', 'shipink')
+        ));
     }
 
     function wdm_add_order_meta_box_actions($actions)
     {
         $actions['wc-shipped'] = __('Shipped', 'shipink');
+        $actions['wc-partially-shipped'] = __('Partially Shipped', 'shipink');
         return $actions;
     }
 
-    function add_shipped_to_order_statuses($order_statuses)
+    function add_missing_to_order_statuses($order_statuses)
     {
         $new_order_statuses = array();
         foreach ($order_statuses as $key => $status) {
             $new_order_statuses[$key] = $status;
             if ('wc-completed' === $key) {
                 $new_order_statuses['wc-shipped'] = __('Shipped', 'shipink');
+                $new_order_statuses['wc-partially-shipped'] = __('Partially Shipped', 'shipink');
             }
         }
         return $new_order_statuses;

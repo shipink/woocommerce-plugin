@@ -6,6 +6,14 @@ msgid_plural "Shipped (%s)"
 msgstr[0] ""
 msgstr[1] ""
 
+msgid "Partially Shipped"
+msgstr ""
+
+msgid "Partially Shipped (%s)"
+msgid_plural "Partially Shipped (%s)"
+msgstr[0] ""
+msgstr[1] ""
+
 msgid "Tracking"
 msgstr ""
 
@@ -13,6 +21,9 @@ msgid "TRACKING"
 msgstr ""
 
 msgid "Connect Shipink"
+msgstr ""
+
+msgid "Re-connect Shipink"
 msgstr ""
 
 msgid "Open Shipink Dashboard"

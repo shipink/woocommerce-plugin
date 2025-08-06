@@ -9,7 +9,7 @@
  * that starts the plugin.
  *
  * @link              https://shipink.io
- * @since             1.5.0
+ * @since             1.5.1
  * @package           Shipink
  *
  * @wordpress-plugin
@@ -17,7 +17,7 @@
  * Plugin URI:        https://shipink.io
  * Description:       Shipink is a new and innovative way for e-commerce companies to easily integrate and use the shipping companies they want to work with.
 
- * Version:           1.5.0
+ * Version:           1.5.1
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       shipink
@@ -33,7 +33,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'SHIPINK_VERSION', '1.5.0' );
+define( 'SHIPINK_VERSION', '1.5.1' );
 
 /**
  * The code that runs during plugin activation.
@@ -69,7 +69,7 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-shipink.php';
  * then kicking off the plugin from this point in the file does
  * not affect the page life cycle.
  *
- * @since    1.5.0
+ * @since    1.5.1
  */
 function run_shipink() {
 

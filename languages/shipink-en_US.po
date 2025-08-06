@@ -12,6 +12,14 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.4.1\n"
 
+msgid "Partially Shipped"
+msgstr "Partially Shipped"
+
+msgid "Partially Shipped (%s)"
+msgid_plural "Partially Shipped (%s)"
+msgstr[0] "Partially Shipped (%s)"
+msgstr[1] "Partially Shipped (%s)"
+
 msgid "Shipped"
 msgstr "Shipped"
 
@@ -28,6 +36,9 @@ msgstr "TRACKING"
 
 msgid "Connect Shipink"
 msgstr "Connect Shipink"
+
+msgid "Re-connect Shipink"
+msgstr "Re-connect Shipink"
 
 msgid "Open Shipink Dashboard"
 msgstr "Open Shipink Dashboard"
