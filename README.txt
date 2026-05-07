@@ -1,33 +1,36 @@
 === Shipink ===
-Version: 1.5.1
+Version: 1.5.2
 Contributors: shipink
-Tags: shipink,shipping,woocommerce,kargo,yurtiçi,aras,sendeo,octovan,ups,fedex,aramex,ptt,mng,shipping price,shipping cost,kargo ücreti,kargo takip,shipping api,kargo entegrasyonu,shipping label,kargo etiketi,kargo fişi,ihracat,eihracat,mikro ihracat,yurtdışı kargo,kargo fiyat hesaplama,shipping cost
+Tags: shipping,kargo,label,etiket
 Requires at least: 4.5.0
-Tested up to: 6.8.1
-Stable tag: 1.5.1
+Tested up to: 6.9.4
+Stable tag: 1.5.2
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Shipink is a new and innovative way for e-commerce companies to easily integrate and use the shipping companies they want to work with.
+Connect your WooCommerce orders to 15+ carriers. Discounted rates, bulk labels, branded tracking, and AI address correction.
 == Description ==
 
 [youtube https://www.youtube.com/watch?v=arJ7d_5ddJI]
 
-[Shipink](https://shipink.io/) is a new and innovative way for e-commerce companies to easily integrate and use the shipping companies they want to work with.
+[Shipink](https://shipink.io/) turns WooCommerce into a multi-carrier shipping powerhouse. Pull orders automatically, print labels with discounted rates across 15+ carriers, and give customers a branded tracking experience — all from one panel.
 
 Shipink Overview
-*   Get discounted shipping rates in Türkiye
-*   Easily automate shipping processes and print labels
-*   Impress customers with modern tracking emails and pages
-*   Visualize average fulfillment and delivery times, as well as costs
-*   We develop a software product that not only allows integration with the most appropriate shipping companies, but also evaluates and selects these companies based on criteria such as price, rating, delivery time, return rate, and more, taking into account the needs of the customer.
+* Discounted Carrier Rates — Save up to 60%. Aras, DHL eCommerce, Yurtiçi, UPS, FedEx, PTT, Sendeo, HepsiJET, Aramex, and more.
+* Automatic Order Sync — WooCommerce orders flow into Shipink instantly. Tracking codes write back automatically.
+* Bulk Shipping — Print hundreds of labels in one click. Picking lists, multi-package, multi-warehouse out of the box.
+* Branded Tracking Page — Your domain, your design. Customers track every shipment in one place, across all carriers.
+* AI Address Correction — Auto-fix addresses with 99.81% accuracy. Cut failed deliveries to near zero.
+* Email + SMS Notifications — Every step gets an automatic customer update.
+* Cash on Delivery & Returns Management
+* Full API + Webhooks for developers.
 
 Supported Carriers:
 *   Aras Kargo
-*   MNG Kargo
+*   DHL eCommerce
 *   Yurtiçi Kargo
 *   PTT
-*   Sendeo
+*   HepsiJET
 *   Kolay Gelsin
 *   Sürat Kargo
 *   UPS Global
@@ -35,8 +38,11 @@ Supported Carriers:
 *   Aramex
 *   and [more](https://shipink.io/carriers/)
 
-
-With Shipink, e-commerce companies can streamline their shipping processes and provide a better overall experience for their customers.
+How It Works:
+1. Install the Shipink plugin and connect your WooCommerce store.
+2. Orders flow into Shipink automatically.
+3. Print labels at our discounted rates or with your own carrier agreement.
+4. Tracking codes sync back to WooCommerce; customers get automatic notifications.
 
 == Installation ==
 
@@ -47,7 +53,7 @@ With Shipink, e-commerce companies can streamline their shipping processes and p
 
 = What WooCommerce version does the plugin support? =
 
-The plugin is tested on WooCommerce version 2.4 to 6.7.2
+The plugin is tested on WooCommerce version 2.4 to 6.9.4
 
 == Screenshots ==
 
@@ -56,6 +62,9 @@ The plugin is tested on WooCommerce version 2.4 to 6.7.2
 3. Sync and manage you orders across all your sales channels
 
 == Changelog ==
+
+= 1.5.2 =
+* Fix known issues
 
 = 1.5.1 =
 * Added "Reconnect Shipink" button for disconnected status
