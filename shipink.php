@@ -17,10 +17,11 @@
  * Plugin URI:        https://shipink.io
  * Description:       Shipink is a new and innovative way for e-commerce companies to easily integrate and use the shipping companies they want to work with.
 
- * Version:           1.5.1
+ * Version:           1.5.2
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       shipink
+ * Domain Path:       /languages
  */
 
 // If this file is called directly, abort.
@@ -33,7 +34,9 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'SHIPINK_VERSION', '1.5.1' );
+define( 'SHIPINK_VERSION', '1.5.2' );
+define( 'SHIPINK_PLUGIN_FILE', __FILE__ );
+define( 'SHIPINK_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 
 /**
  * The code that runs during plugin activation.
@@ -55,6 +58,15 @@ function deactivate_shipink() {
 
 register_activation_hook( __FILE__, 'activate_shipink' );
 register_deactivation_hook( __FILE__, 'deactivate_shipink' );
+
+/**
+ * Declare HPOS (High-Performance Order Storage) compatibility.
+ */
+add_action( 'before_woocommerce_init', function () {
+	if ( class_exists( '\Automattic\WooCommerce\Utilities\FeaturesUtil' ) ) {
+		\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'custom_order_tables', __FILE__, true );
+	}
+} );
 
 /**
  * The core plugin class that is used to define internationalization,

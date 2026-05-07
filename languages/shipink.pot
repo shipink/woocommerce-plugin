@@ -1,117 +1,288 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Shipink
+# This file is distributed under the same license as the Shipink package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Shipink 1.5.2\n"
+"Report-Msgid-Bugs-To: info@shipink.com\n"
+"POT-Creation-Date: 2026-05-07 16:02+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: includes/class-shipink.php:251
+msgid "Shipink"
+msgstr ""
+
+#: includes/class-shipink.php:449 includes/class-shipink.php:490
 msgid "Shipped"
 msgstr ""
 
+#: includes/class-shipink.php:454
+#, php-format
 msgid "Shipped (%s)"
 msgid_plural "Shipped (%s)"
 msgstr[0] ""
 msgstr[1] ""
 
+#: includes/class-shipink.php:458 includes/class-shipink.php:491
 msgid "Partially Shipped"
 msgstr ""
 
+#: includes/class-shipink.php:463
+#, php-format
 msgid "Partially Shipped (%s)"
 msgid_plural "Partially Shipped (%s)"
 msgstr[0] ""
 msgstr[1] ""
 
+#: includes/class-shipink.php:469
+msgid "Mark as Shipped"
+msgstr ""
+
+#: includes/class-shipink.php:470
+msgid "Mark as Partially Shipped"
+msgstr ""
+
+#: includes/class-shipink.php:476
+msgid "Order marked as shipped via Shipink."
+msgstr ""
+
+#: includes/class-shipink.php:481
+msgid "Order marked as partially shipped via Shipink."
+msgstr ""
+
+#: includes/class-shipink.php:503 includes/class-shipink.php:514
 msgid "Tracking"
 msgstr ""
 
+#: includes/class-shipink.php:524
 msgid "TRACKING"
 msgstr ""
 
-msgid "Connect Shipink"
-msgstr ""
-
-msgid "Re-connect Shipink"
-msgstr ""
-
+#: public/views/wc-settings/shipink-page.php:24
 msgid "Open Shipink Dashboard"
 msgstr ""
 
-msgid "Shipink is a platform that connects multiple carriers and sales channels and provides an easy-to-use interface to manage all of your label creation, tracking, returns, and many more."
-msgstr ""
-
-msgid "Access your Shipink dashboard to manage shipments, track orders, and configure shipping settings."
-msgstr ""
-
-msgid "Shipink Multi-Carrier Shipping"
-msgstr ""
-
-msgid "Complete shipping solution for e-commerce"
-msgstr ""
-
-msgid "Connected"
-msgstr ""
-
-msgid "Not Connected"
-msgstr ""
-
-msgid "Complete Shipping Solution"
-msgstr ""
-
-msgid "Order Management"
-msgstr ""
-
-msgid "Ship e-commerce orders easily from one place to shorten fulfillment time"
-msgstr ""
-
-msgid "All Labels in One Place"
-msgstr ""
-
-msgid "Manage shipping labels for various global carriers like Aras, MNG, UPS, Aramex, or FedEx with just a few clicks"
-msgstr ""
-
-msgid "Best Shipping Rates"
-msgstr ""
-
-msgid "Find the cheapest or fastest shipping company for your shipment with up to 60% discounts"
-msgstr ""
-
-msgid "Advanced Tracking"
-msgstr ""
-
-msgid "Track all packages in one place with branded tracking pages and automatic notifications"
-msgstr ""
-
-msgid "International Shipping"
-msgstr ""
-
-msgid "Save cost and time on international shipping with many carriers worldwide"
-msgstr ""
-
-msgid "Multi-carrier API"
-msgstr ""
-
-msgid "Shipping APIs designed for developers to integrate carriers worldwide"
-msgstr ""
-
-msgid "Supported Carriers"
-msgstr ""
-
-msgid "Dashboard Access"
-msgstr ""
-
-msgid "Get Started"
-msgstr ""
-
-msgid "Connect your WooCommerce store to Shipink and start shipping with multiple carriers in minutes. Pay as you receive orders!"
-msgstr ""
-
+#: public/views/wc-settings/shipink-page.php:25
 msgid "Connect to Shipink"
 msgstr ""
 
+#: public/views/wc-settings/shipink-page.php:342
+msgid "Shipink Multi-Carrier Shipping"
+msgstr ""
+
+#: public/views/wc-settings/shipink-page.php:343
+msgid "Complete shipping solution for e-commerce"
+msgstr ""
+
+#: public/views/wc-settings/shipink-page.php:345
+msgid "Connected"
+msgstr ""
+
+#: public/views/wc-settings/shipink-page.php:345
+msgid "Not Connected"
+msgstr ""
+
+#: public/views/wc-settings/shipink-page.php:353
+msgid "Complete Shipping Solution"
+msgstr ""
+
+#: public/views/wc-settings/shipink-page.php:359
+msgid "Order Management"
+msgstr ""
+
+#: public/views/wc-settings/shipink-page.php:360
+msgid ""
+"Ship e-commerce orders easily from one place to shorten fulfillment time"
+msgstr ""
+
+#: public/views/wc-settings/shipink-page.php:367
+msgid "All Labels in One Place"
+msgstr ""
+
+#: public/views/wc-settings/shipink-page.php:368
+msgid ""
+"Manage shipping labels for various global carriers like Aras, MNG, UPS, "
+"Aramex, or FedEx with just a few clicks"
+msgstr ""
+
+#: public/views/wc-settings/shipink-page.php:375
+msgid "Best Shipping Rates"
+msgstr ""
+
+#: public/views/wc-settings/shipink-page.php:376
+#, php-format
+msgid ""
+"Find the cheapest or fastest shipping company for your shipment with up to "
+"60% discounts"
+msgstr ""
+
+#: public/views/wc-settings/shipink-page.php:383
+msgid "Advanced Tracking"
+msgstr ""
+
+#: public/views/wc-settings/shipink-page.php:384
+msgid ""
+"Track all packages in one place with branded tracking pages and automatic "
+"notifications"
+msgstr ""
+
+#: public/views/wc-settings/shipink-page.php:391
+msgid "International Shipping"
+msgstr ""
+
+#: public/views/wc-settings/shipink-page.php:392
+msgid ""
+"Save cost and time on international shipping with many carriers worldwide"
+msgstr ""
+
+#: public/views/wc-settings/shipink-page.php:399
+msgid "Multi-carrier API"
+msgstr ""
+
+#: public/views/wc-settings/shipink-page.php:400
+msgid "Shipping APIs designed for developers to integrate carriers worldwide"
+msgstr ""
+
+#: public/views/wc-settings/shipink-page.php:406
+msgid "Supported Carriers"
+msgstr ""
+
+#: public/views/wc-settings/shipink-page.php:429
+msgid "Dashboard Access"
+msgstr ""
+
+#: public/views/wc-settings/shipink-page.php:429
+msgid "Get Started"
+msgstr ""
+
+#: public/views/wc-settings/shipink-page.php:434
+msgid ""
+"Access your Shipink dashboard to manage shipments, track orders, and "
+"configure shipping settings."
+msgstr ""
+
+#: public/views/wc-settings/shipink-page.php:436
+msgid ""
+"Connect your WooCommerce store to Shipink and start shipping with multiple "
+"carriers in minutes. Pay as you receive orders!"
+msgstr ""
+
+#: public/views/wc-settings/shipink-page.php:446
+msgid "Reconnect Shipink"
+msgstr ""
+
+#: public/views/wc-settings/shipink-page.php:452
 msgid "Pay as you receive orders"
 msgstr ""
 
+#: public/views/wc-settings/shipink-page.php:453
 msgid "No credit card required"
 msgstr ""
 
+#: public/views/wc-settings/shipink-page.php:454
+#, php-format
 msgid "Up to 60% shipping discounts"
 msgstr ""
 
+#: public/views/wc-settings/shipink-page.php:455
+#, php-format
 msgid "98% customer satisfaction"
 msgstr ""
 
+#: public/views/wc-settings/shipink-page.php:456
 msgid "Easy WooCommerce integration"
 msgstr ""
+
+#: public/views/wc-settings/shipink-page.php:77 public/views/wc-settings/shipink-page.php:84
+msgid "WooCommerce"
+msgstr ""
+
+#: public/views/wc-settings/shipink-page.php:78
+msgid "Unknown"
+msgstr ""
+
+#: public/views/wc-settings/shipink-page.php:80 public/views/wc-settings/shipink-page.php:97
+#, php-format
+msgid "Requires v%s or higher"
+msgstr ""
+
+#: public/views/wc-settings/shipink-page.php:85
+msgid "Not active"
+msgstr ""
+
+#: public/views/wc-settings/shipink-page.php:87
+msgid "WooCommerce must be installed and active"
+msgstr ""
+
+#: public/views/wc-settings/shipink-page.php:94
+msgid "PHP version"
+msgstr ""
+
+#: public/views/wc-settings/shipink-page.php:102
+msgid "cURL extension"
+msgstr ""
+
+#: public/views/wc-settings/shipink-page.php:103 public/views/wc-settings/shipink-page.php:111
+msgid "Available"
+msgstr ""
+
+#: public/views/wc-settings/shipink-page.php:103
+msgid "Missing"
+msgstr ""
+
+#: public/views/wc-settings/shipink-page.php:105
+msgid "Required for API requests"
+msgstr ""
+
+#: public/views/wc-settings/shipink-page.php:110
+msgid "SSL (HTTPS)"
+msgstr ""
+
+#: public/views/wc-settings/shipink-page.php:111
+msgid "Enabled"
+msgstr ""
+
+#: public/views/wc-settings/shipink-page.php:111
+msgid "Disabled"
+msgstr ""
+
+#: public/views/wc-settings/shipink-page.php:113
+msgid "Recommended for secure webhook delivery"
+msgstr ""
+
+#: public/views/wc-settings/shipink-page.php:118
+msgid "Permalinks"
+msgstr ""
+
+#: public/views/wc-settings/shipink-page.php:119
+msgid "Pretty"
+msgstr ""
+
+#: public/views/wc-settings/shipink-page.php:119
+msgid "Plain"
+msgstr ""
+
+#: public/views/wc-settings/shipink-page.php:121
+msgid "Plain permalinks can break webhooks. Settings → Permalinks"
+msgstr ""
+
+#: public/views/wc-settings/shipink-page.php:424
+msgid "System Status"
+msgstr ""
+
+#: public/views/wc-settings/shipink-page.php:427
+#, php-format
+msgid "%d issue"
+msgid_plural "%d issues"
+msgstr[0] ""
+msgstr[1] ""

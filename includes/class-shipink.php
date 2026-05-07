@@ -145,7 +145,7 @@ class Shipink
 
         $plugin_i18n = new Shipink_i18n();
 
-        $this->loader->add_action('plugins_loaded', $plugin_i18n, 'load_plugin_textdomain');
+        $this->loader->add_action('init', $plugin_i18n, 'load_plugin_textdomain');
 
     }
 
@@ -237,7 +237,9 @@ class Shipink
     private function load_shipink_wc_status()
     {
         add_action('init', array($this, 'custom_register_order_missing_status'));
-        add_action('woocommerce_order_actions', array($this, 'wdm_add_order_meta_box_actions'));
+        add_filter('woocommerce_order_actions', array($this, 'wdm_add_order_meta_box_actions'));
+        add_action('woocommerce_order_action_mark_shipped', array($this, 'handle_mark_shipped'));
+        add_action('woocommerce_order_action_mark_partially_shipped', array($this, 'handle_mark_partially_shipped'));
         add_filter('wc_order_statuses', array($this, 'add_missing_to_order_statuses'));
         add_filter('woocommerce_admin_order_actions', array($this, 'add_tracking_action_to_order_list'), 10, 2);
         add_action('woocommerce_order_details_after_order_table', array($this, 'add_tracking_info_to_order_details'), 10, 1);
@@ -259,51 +261,40 @@ class Shipink
 
     public function shipink_admin_page()
     {
+        if (!current_user_can('manage_options')) {
+            return;
+        }
         $is_connected = $this->is_shipink_connected();
         $file = rtrim(plugin_dir_path(__DIR__), '/') . '/public/views/wc-settings/shipink-page.php';
-        $html = $this->render($file, array('is_connected' => $is_connected));
-        echo wp_kses($html, $this->get_allowed_tags());
+        echo $this->render($file, array('is_connected' => $is_connected));
     }
 
     /**
-     * Check if Shipink is connected by looking for API keys in WooCommerce
+     * Check if Shipink is connected.
      *
-     * @return bool True if connected, false otherwise
-     * @since 1.5.1
+     * @return bool True if connected, false otherwise.
      */
     private function is_shipink_connected()
     {
+        if (get_option('shipink_connected')) {
+            return true;
+        }
+
+        if (!empty(get_option('woocommerce_shipink_settings'))) {
+            return true;
+        }
+
         global $wpdb;
-        
-        // Check WooCommerce API keys table for Shipink-related keys
-        $api_keys = $wpdb->get_results(
+        $api_key_count = (int) $wpdb->get_var(
             $wpdb->prepare(
-                "SELECT * FROM {$wpdb->prefix}woocommerce_api_keys 
-                 WHERE description LIKE %s 
-                 AND permissions IN ('read_write', 'write')
-                 AND truncated_key IS NOT NULL",
+                "SELECT COUNT(*) FROM {$wpdb->prefix}woocommerce_api_keys
+                 WHERE description LIKE %s
+                 AND permissions IN ('read_write', 'write')",
                 '%shipink%'
             )
         );
-        
-        if (!empty($api_keys)) {
-            return true;
-        }
-        
-        // Alternative check: Look for Shipink-related options
-        $shipink_settings = get_option('woocommerce_shipink_settings');
-        if (!empty($shipink_settings)) {
-            return true;
-        }
-        
-        // Check for user meta indicating connection
-        $user_id = get_current_user_id();
-        $user_shipink_data = get_user_meta($user_id, 'shipink_connected', true);
-        if (!empty($user_shipink_data)) {
-            return true;
-        }
-        
-        return false;
+
+        return $api_key_count > 0;
     }
 
     public function get_allowed_tags()
@@ -443,13 +434,13 @@ class Shipink
 
     public function render($file, $variables = array())
     {
-        // Extract variables to make them available in the template
         if (!empty($variables)) {
-            extract($variables);
+            extract($variables, EXTR_SKIP);
         }
-        
-        // Start output buffering to capture the template output
+
+        ob_start();
         require $file;
+        return ob_get_clean();
     }
 
     function custom_register_order_missing_status()
@@ -475,9 +466,19 @@ class Shipink
 
     function wdm_add_order_meta_box_actions($actions)
     {
-        $actions['wc-shipped'] = __('Shipped', 'shipink');
-        $actions['wc-partially-shipped'] = __('Partially Shipped', 'shipink');
+        $actions['mark_shipped'] = __('Mark as Shipped', 'shipink');
+        $actions['mark_partially_shipped'] = __('Mark as Partially Shipped', 'shipink');
         return $actions;
+    }
+
+    function handle_mark_shipped($order)
+    {
+        $order->update_status('shipped', __('Order marked as shipped via Shipink.', 'shipink'));
+    }
+
+    function handle_mark_partially_shipped($order)
+    {
+        $order->update_status('partially-shipped', __('Order marked as partially shipped via Shipink.', 'shipink'));
     }
 
     function add_missing_to_order_statuses($order_statuses)
@@ -495,7 +496,7 @@ class Shipink
 
     function add_tracking_action_to_order_list($actions, $order)
     {
-        $tracking_url = get_post_meta($order->get_id(), 'shipink_tracking_url', true);
+        $tracking_url = $order->get_meta('shipink_tracking_url');
         if (!empty($tracking_url)) {
             $actions['shipink_tracking'] = array(
                 'url' => $tracking_url,
@@ -508,15 +509,15 @@ class Shipink
 
     function add_tracking_info_to_order_details($order)
     {
-        $tracking_url = get_post_meta($order->get_id(), 'shipink_tracking_url', true);
+        $tracking_url = $order->get_meta('shipink_tracking_url');
         if (!empty($tracking_url)) {
-            echo '<p class="order-tracking"><strong>' . __('Tracking', 'shipink') . '</strong> <a href="' . esc_url($tracking_url) . '" target="_blank">' . esc_url($tracking_url) . '</a></p>';
+            echo '<p class="order-tracking"><strong>' . esc_html__('Tracking', 'shipink') . '</strong> <a href="' . esc_url($tracking_url) . '" target="_blank">' . esc_html($tracking_url) . '</a></p>';
         }
     }
 
     function add_custom_tracking_button_to_orders($actions, $order)
     {
-        $tracking_url = get_post_meta($order->get_id(), 'shipink_tracking_url', true);
+        $tracking_url = $order->get_meta('shipink_tracking_url');
         if (!empty($tracking_url)) {
             $actions['shipink_tracking'] = array(
                 'url' => $tracking_url,

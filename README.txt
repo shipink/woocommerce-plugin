@@ -57,14 +57,21 @@ The plugin is tested on WooCommerce version 2.4 to 6.9.4
 
 == Screenshots ==
 
-1. Use our discounted rates or your own rates
-2. Select the carrier that suits you best
-3. Sync and manage you orders across all your sales channels
+1. Sync orders
+2. Compare rates
+3. Bulk operations
+4. Branded tracking page
+5. Automation and AI
 
 == Changelog ==
 
 = 1.5.2 =
-* Fix known issues
+* Fixed XSS vulnerability in the admin settings page
+* Fixed broken signup query string encoding
+* Fixed connection status check (now stored as a global option)
+* Fixed "Mark as Shipped" / "Mark as Partially Shipped" order actions
+* Added HPOS (High-Performance Order Storage) compatibility
+* Fixed admin page rendering and multisite store id handling
 
 = 1.5.1 =
 * Added "Reconnect Shipink" button for disconnected status

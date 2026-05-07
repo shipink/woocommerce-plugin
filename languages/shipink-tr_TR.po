@@ -1,7 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: \n"
+"Report-Msgid-Bugs-To: info@shipink.com\n"
+"POT-Creation-Date: 2026-05-07 16:02+0300\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -12,120 +13,296 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.4.1\n"
 
-msgid "Partially Shipped"
-msgstr "Kısmen Kargolandı"
+#: includes/class-shipink.php:251
+msgid "Shipink"
+msgstr "Shipink"
 
-msgid "Partially Shipped (%s)"
-msgid_plural "Partially Shipped (%s)"
-msgstr[0] "Kısmen Kargolandı (%s)"
-msgstr[1] "Kısmen Kargolandı (%s)"
-
+#: includes/class-shipink.php:449 includes/class-shipink.php:490
 msgid "Shipped"
 msgstr "Kargolandı"
 
+#: includes/class-shipink.php:454
+#, php-format
 msgid "Shipped (%s)"
 msgid_plural "Shipped (%s)"
 msgstr[0] "Kargolandı (%s)"
 msgstr[1] "Kargolandı (%s)"
 
+#: includes/class-shipink.php:458 includes/class-shipink.php:491
+msgid "Partially Shipped"
+msgstr "Kısmen Kargolandı"
+
+#: includes/class-shipink.php:463
+#, php-format
+msgid "Partially Shipped (%s)"
+msgid_plural "Partially Shipped (%s)"
+msgstr[0] "Kısmen Kargolandı (%s)"
+msgstr[1] "Kısmen Kargolandı (%s)"
+
+#: includes/class-shipink.php:469
+msgid "Mark as Shipped"
+msgstr "Kargolandı olarak işaretle"
+
+#: includes/class-shipink.php:470
+msgid "Mark as Partially Shipped"
+msgstr "Kısmen Kargolandı olarak işaretle"
+
+#: includes/class-shipink.php:476
+msgid "Order marked as shipped via Shipink."
+msgstr "Sipariş Shipink üzerinden kargolandı olarak işaretlendi."
+
+#: includes/class-shipink.php:481
+msgid "Order marked as partially shipped via Shipink."
+msgstr "Sipariş Shipink üzerinden kısmen kargolandı olarak işaretlendi."
+
+#: includes/class-shipink.php:503 includes/class-shipink.php:514
 msgid "Tracking"
 msgstr "Kargo Takip"
 
+#: includes/class-shipink.php:524
 msgid "TRACKING"
 msgstr "KARGO TAKİP"
 
-msgid "Connect Shipink"
-msgstr "Shipink'e Bağlan"
-
-msgid "Re-connect Shipink"
-msgstr "Shipink'e Tekrar Bağlan"
-
+#: public/views/wc-settings/shipink-page.php:24
 msgid "Open Shipink Dashboard"
 msgstr "Shipink Panelini Aç"
 
-msgid "Shipink is a platform that connects multiple carriers and sales channels and provides an easy-to-use interface to manage all of your label creation, tracking, returns, and many more."
-msgstr "Shipink, birden fazla kargo şirketini ve satış kanalını birbirine bağlayan ve etiket oluşturma, takip, iade ve daha birçok işlemi yönetmek için kullanımı kolay bir arayüz sağlayan bir platformdur."
-
-msgid "Access your Shipink dashboard to manage shipments, track orders, and configure shipping settings."
-msgstr "Kargolarınızı yönetmek, siparişleri takip etmek ve kargo ayarlarını yapılandırmak için Shipink panonuza erişin."
-
-msgid "Shipink Multi-Carrier Shipping"
-msgstr "Shipink Çoklu Kargo Entegrasyonu"
-
-msgid "Complete shipping solution for e-commerce"
-msgstr "E-ticaret için eksiksiz kargo çözümü"
-
-msgid "Connected"
-msgstr "Bağlandı"
-
-msgid "Not Connected"
-msgstr "Bağlanmadı"
-
-msgid "Complete Shipping Solution"
-msgstr "Eksiksiz Kargo Çözümü"
-
-msgid "Order Management"
-msgstr "Sipariş Yönetimi"
-
-msgid "Ship e-commerce orders easily from one place to shorten fulfillment time"
-msgstr "E-ticaret siparişlerini tek yerden kolayca gönderin ve karşılama süresini kısaltın"
-
-msgid "All Labels in One Place"
-msgstr "Tüm Etiketler Tek Yerde"
-
-msgid "Manage shipping labels for various global carriers like Aras, MNG, UPS, Aramex, or FedEx with just a few clicks"
-msgstr "Aras, MNG, UPS, Aramex veya FedEx gibi çeşitli küresel kargo şirketleri için kargo etiketlerini sadece birkaç tıklamayla yönetin"
-
-msgid "Best Shipping Rates"
-msgstr "En İyi Kargo Ücretleri"
-
-msgid "Find the cheapest or fastest shipping company for your shipment with up to 60% discounts"
-msgstr "Kargonuz için %60'a varan indirimlerle en ucuz veya en hızlı kargo şirketini bulun"
-
-msgid "Advanced Tracking"
-msgstr "Gelişmiş Takip"
-
-msgid "Track all packages in one place with branded tracking pages and automatic notifications"
-msgstr "Markalı takip sayfaları ve otomatik bildirimlerle tüm paketleri tek yerden takip edin"
-
-msgid "International Shipping"
-msgstr "Uluslararası Kargo"
-
-msgid "Save cost and time on international shipping with many carriers worldwide"
-msgstr "Dünya çapında birçok kargo şirketi ile uluslararası kargoda maliyet ve zaman tasarrufu yapın"
-
-msgid "Multi-carrier API"
-msgstr "Çoklu Kargo API'si"
-
-msgid "Shipping APIs designed for developers to integrate carriers worldwide"
-msgstr "Geliştiricilerin dünya çapında kargo şirketlerini entegre etmesi için tasarlanmış kargo API'leri"
-
-msgid "Supported Carriers"
-msgstr "Desteklenen Kargo Şirketleri"
-
-msgid "Dashboard Access"
-msgstr "Panel Erişimi"
-
-msgid "Get Started"
-msgstr "Başlayın"
-
-msgid "Connect your WooCommerce store to Shipink and start shipping with multiple carriers in minutes. Pay as you receive orders!"
-msgstr "WooCommerce mağazanızı Shipink'e bağlayın ve dakikalar içinde birden fazla kargo şirketi ile gönderim yapmaya başlayın. Sipariş aldıkça ödeyin!"
-
+#: public/views/wc-settings/shipink-page.php:25
 msgid "Connect to Shipink"
 msgstr "Shipink'e Bağlan"
 
+#: public/views/wc-settings/shipink-page.php:342
+msgid "Shipink Multi-Carrier Shipping"
+msgstr "Shipink Çoklu Kargo Entegrasyonu"
+
+#: public/views/wc-settings/shipink-page.php:343
+msgid "Complete shipping solution for e-commerce"
+msgstr "E-ticaret için eksiksiz kargo çözümü"
+
+#: public/views/wc-settings/shipink-page.php:345
+msgid "Connected"
+msgstr "Bağlandı"
+
+#: public/views/wc-settings/shipink-page.php:345
+msgid "Not Connected"
+msgstr "Bağlanmadı"
+
+#: public/views/wc-settings/shipink-page.php:353
+msgid "Complete Shipping Solution"
+msgstr "Eksiksiz Kargo Çözümü"
+
+#: public/views/wc-settings/shipink-page.php:359
+msgid "Order Management"
+msgstr "Sipariş Yönetimi"
+
+#: public/views/wc-settings/shipink-page.php:360
+msgid ""
+"Ship e-commerce orders easily from one place to shorten fulfillment time"
+msgstr ""
+"E-ticaret siparişlerini tek yerden kolayca gönderin ve karşılama süresini "
+"kısaltın"
+
+#: public/views/wc-settings/shipink-page.php:367
+msgid "All Labels in One Place"
+msgstr "Tüm Etiketler Tek Yerde"
+
+#: public/views/wc-settings/shipink-page.php:368
+msgid ""
+"Manage shipping labels for various global carriers like Aras, MNG, UPS, "
+"Aramex, or FedEx with just a few clicks"
+msgstr ""
+"Aras, MNG, UPS, Aramex veya FedEx gibi çeşitli küresel kargo şirketleri için "
+"kargo etiketlerini sadece birkaç tıklamayla yönetin"
+
+#: public/views/wc-settings/shipink-page.php:375
+msgid "Best Shipping Rates"
+msgstr "En İyi Kargo Ücretleri"
+
+#: public/views/wc-settings/shipink-page.php:376
+#, no-php-format
+msgid ""
+"Find the cheapest or fastest shipping company for your shipment with up to "
+"60% discounts"
+msgstr ""
+"Kargonuz için %60'a varan indirimlerle en ucuz veya en hızlı kargo şirketini "
+"bulun"
+
+#: public/views/wc-settings/shipink-page.php:383
+msgid "Advanced Tracking"
+msgstr "Gelişmiş Takip"
+
+#: public/views/wc-settings/shipink-page.php:384
+msgid ""
+"Track all packages in one place with branded tracking pages and automatic "
+"notifications"
+msgstr ""
+"Markalı takip sayfaları ve otomatik bildirimlerle tüm paketleri tek yerden "
+"takip edin"
+
+#: public/views/wc-settings/shipink-page.php:391
+msgid "International Shipping"
+msgstr "Uluslararası Kargo"
+
+#: public/views/wc-settings/shipink-page.php:392
+msgid ""
+"Save cost and time on international shipping with many carriers worldwide"
+msgstr ""
+"Dünya çapında birçok kargo şirketi ile uluslararası kargoda maliyet ve zaman "
+"tasarrufu yapın"
+
+#: public/views/wc-settings/shipink-page.php:399
+msgid "Multi-carrier API"
+msgstr "Çoklu Kargo API'si"
+
+#: public/views/wc-settings/shipink-page.php:400
+msgid "Shipping APIs designed for developers to integrate carriers worldwide"
+msgstr ""
+"Geliştiricilerin dünya çapında kargo şirketlerini entegre etmesi için "
+"tasarlanmış kargo API'leri"
+
+#: public/views/wc-settings/shipink-page.php:406
+msgid "Supported Carriers"
+msgstr "Desteklenen Kargo Şirketleri"
+
+#: public/views/wc-settings/shipink-page.php:429
+msgid "Dashboard Access"
+msgstr "Panel Erişimi"
+
+#: public/views/wc-settings/shipink-page.php:429
+msgid "Get Started"
+msgstr "Başlayın"
+
+#: public/views/wc-settings/shipink-page.php:434
+msgid ""
+"Access your Shipink dashboard to manage shipments, track orders, and "
+"configure shipping settings."
+msgstr ""
+"Kargolarınızı yönetmek, siparişleri takip etmek ve kargo ayarlarını "
+"yapılandırmak için Shipink panonuza erişin."
+
+#: public/views/wc-settings/shipink-page.php:436
+msgid ""
+"Connect your WooCommerce store to Shipink and start shipping with multiple "
+"carriers in minutes. Pay as you receive orders!"
+msgstr ""
+"WooCommerce mağazanızı Shipink'e bağlayın ve dakikalar içinde birden fazla "
+"kargo şirketi ile gönderim yapmaya başlayın. Sipariş aldıkça ödeyin!"
+
+#: public/views/wc-settings/shipink-page.php:446
+msgid "Reconnect Shipink"
+msgstr "Shipink'e Tekrar Bağlan"
+
+#: public/views/wc-settings/shipink-page.php:452
 msgid "Pay as you receive orders"
 msgstr "Sipariş aldıkça ödeyin"
 
+#: public/views/wc-settings/shipink-page.php:453
 msgid "No credit card required"
 msgstr "Kredi kartı gerekmez"
 
+#: public/views/wc-settings/shipink-page.php:454
+#, no-php-format
 msgid "Up to 60% shipping discounts"
 msgstr "%60'a varan kargo indirimleri"
 
+#: public/views/wc-settings/shipink-page.php:455
+#, no-php-format
 msgid "98% customer satisfaction"
 msgstr "%98 müşteri memnuniyeti"
 
+#: public/views/wc-settings/shipink-page.php:456
 msgid "Easy WooCommerce integration"
 msgstr "Kolay WooCommerce entegrasyonu"
+
+#: public/views/wc-settings/shipink-page.php:77 public/views/wc-settings/shipink-page.php:84
+msgid "WooCommerce"
+msgstr "WooCommerce"
+
+#: public/views/wc-settings/shipink-page.php:78
+msgid "Unknown"
+msgstr "Bilinmiyor"
+
+#: public/views/wc-settings/shipink-page.php:80 public/views/wc-settings/shipink-page.php:97
+#, php-format
+msgid "Requires v%s or higher"
+msgstr "v%s veya üstü gerekli"
+
+#: public/views/wc-settings/shipink-page.php:85
+msgid "Not active"
+msgstr "Etkin değil"
+
+#: public/views/wc-settings/shipink-page.php:87
+msgid "WooCommerce must be installed and active"
+msgstr "WooCommerce kurulu ve etkin olmalı"
+
+#: public/views/wc-settings/shipink-page.php:94
+msgid "PHP version"
+msgstr "PHP versiyonu"
+
+#: public/views/wc-settings/shipink-page.php:102
+msgid "cURL extension"
+msgstr "cURL eklentisi"
+
+#: public/views/wc-settings/shipink-page.php:103 public/views/wc-settings/shipink-page.php:111
+msgid "Available"
+msgstr "Mevcut"
+
+#: public/views/wc-settings/shipink-page.php:103
+msgid "Missing"
+msgstr "Eksik"
+
+#: public/views/wc-settings/shipink-page.php:105
+msgid "Required for API requests"
+msgstr "API istekleri için gerekli"
+
+#: public/views/wc-settings/shipink-page.php:110
+msgid "SSL (HTTPS)"
+msgstr "SSL (HTTPS)"
+
+#: public/views/wc-settings/shipink-page.php:111
+msgid "Enabled"
+msgstr "Etkin"
+
+#: public/views/wc-settings/shipink-page.php:111
+msgid "Disabled"
+msgstr "Kapalı"
+
+#: public/views/wc-settings/shipink-page.php:113
+msgid "Recommended for secure webhook delivery"
+msgstr "Güvenli webhook teslimi için önerilir"
+
+#: public/views/wc-settings/shipink-page.php:118
+msgid "Permalinks"
+msgstr "Kalıcı Bağlantılar"
+
+#: public/views/wc-settings/shipink-page.php:119
+msgid "Pretty"
+msgstr "Düzgün"
+
+#: public/views/wc-settings/shipink-page.php:119
+msgid "Plain"
+msgstr "Sade"
+
+#: public/views/wc-settings/shipink-page.php:121
+msgid "Plain permalinks can break webhooks. Settings → Permalinks"
+msgstr "Sade kalıcı bağlantılar webhookları bozabilir. Ayarlar → Kalıcı Bağlantılar"
+
+#: public/views/wc-settings/shipink-page.php:424
+msgid "System Status"
+msgstr "Sistem Durumu"
+
+#: public/views/wc-settings/shipink-page.php:427
+#, php-format
+msgid "%d issue"
+msgid_plural "%d issues"
+msgstr[0] "%d sorun"
+msgstr[1] "%d sorun"
+
+#~ msgid ""
+#~ "Shipink is a platform that connects multiple carriers and sales channels "
+#~ "and provides an easy-to-use interface to manage all of your label "
+#~ "creation, tracking, returns, and many more."
+#~ msgstr ""
+#~ "Shipink, birden fazla kargo şirketini ve satış kanalını birbirine "
+#~ "bağlayan ve etiket oluşturma, takip, iade ve daha birçok işlemi yönetmek "
+#~ "için kullanımı kolay bir arayüz sağlayan bir platformdur."

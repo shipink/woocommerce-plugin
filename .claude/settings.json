@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(php -l shipink.php)",
+      "Bash(php -l includes/class-shipink.php)",
+      "Bash(php -l includes/class-shipink-i18n.php)",
+      "Bash(php -l public/views/wc-settings/shipink-page.php)",
+      "Bash(msgfmt --version)",
+      "Bash(msgfmt -c -v -o languages/shipink-tr_TR.mo languages/shipink-tr_TR.po)",
+      "Bash(msgfmt -c -v -o languages/shipink-en_US.mo languages/shipink-en_US.po)",
+      "Bash(xgettext --version)",
+      "Bash(xargs xgettext --from-code=UTF-8 --language=PHP --package-name=Shipink --package-version=1.5.2 --copyright-holder=Shipink --msgid-bugs-address=\"info@shipink.com\" -k -k__ -k_e -kesc_html__ -kesc_html_e -kesc_attr__ -kesc_attr_e -k_x:1,2c -k_ex:1,2c -k_n:1,2 -k_nx:1,2,4c -k_n_noop:1,2 -k_nx_noop:1,2,3c -o languages/shipink.pot)",
+      "Bash(msgmerge --update --backup=none languages/shipink-tr_TR.po languages/shipink.pot)",
+      "Bash(msgmerge --update --backup=none languages/shipink-en_US.po languages/shipink.pot)",
+      "Bash(rm -rf /tmp/shipink-pkg)",
+      "Bash(mkdir -p /tmp/shipink-pkg/shipink)",
+      "Bash(rsync -a --exclude='.git' --exclude='.github' --exclude='*.po~' --exclude='.DS_Store' /Users/oytunyuksel/Dev/shipink-github/woocommerce-plugin/ /tmp/shipink-pkg/shipink/)",
+      "Read(//tmp/**)",
+      "Bash(zip -rq /tmp/shipink-1.5.2.zip shipink)",
+      "Bash(mv /tmp/shipink-1.5.2.zip /Users/oytunyuksel/Dev/shipink-github/shipink-1.5.2.zip)",
+      "Read(//Users/oytunyuksel/Dev/shipink-github/**)",
+      "Bash(msgfmt -c --statistics -o shipink-tr_TR.mo shipink-tr_TR.po)",
+      "Bash(msgfmt -c --statistics -o shipink-en_US.mo shipink-en_US.po)",
+      "Bash(wp --version)"
+    ]
+  }
+}

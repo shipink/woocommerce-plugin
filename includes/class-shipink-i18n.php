@@ -34,10 +34,21 @@ class Shipink_i18n {
 	 */
 	public function load_plugin_textdomain() {
 
+		$locale = apply_filters( 'plugin_locale', determine_locale(), 'shipink' );
+
+		// Plugin'in kendi MO'sunu önceliklendir.
+		// WP varsayılanı önce wp-content/languages/plugins/ altına bakar; orada
+		// eski veya boş bir MO bulunursa plugin'in güncel MO'sunu hiç denemez.
+		$plugin_mofile = SHIPINK_PLUGIN_DIR . 'languages/shipink-' . $locale . '.mo';
+		if ( file_exists( $plugin_mofile ) && load_textdomain( 'shipink', $plugin_mofile ) ) {
+			return;
+		}
+
+		// Fallback: standart WP yolu (resmi language pack indirilmişse onu kullanır).
 		load_plugin_textdomain(
 			'shipink',
 			false,
-			dirname( dirname( plugin_basename( __FILE__ ) ) ) . '/languages/'
+			dirname( plugin_basename( SHIPINK_PLUGIN_FILE ) ) . '/languages/'
 		);
 
 	}

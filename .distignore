@@ -1,0 +1,33 @@
+# Directories
+.git
+.github
+.wordpress-org
+.claude
+node_modules
+vendor
+
+# Dev / config files
+.gitignore
+.gitattributes
+.distignore
+.editorconfig
+.eslintrc
+.eslintignore
+.prettierrc
+.phpcs.xml
+.phpcs.xml.dist
+phpcs.xml
+phpcs.xml.dist
+phpunit.xml
+phpunit.xml.dist
+composer.json
+composer.lock
+package.json
+package-lock.json
+yarn.lock
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+*.swp
+*.log
