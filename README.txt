@@ -1,10 +1,10 @@
 === Shipink ===
-Version: 1.5.2
+Version: 1.5.3
 Contributors: shipink
 Tags: shipping,kargo,label,etiket
 Requires at least: 4.5.0
 Tested up to: 6.9.4
-Stable tag: 1.5.2
+Stable tag: 1.5.3
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -64,6 +64,9 @@ The plugin is tested on WooCommerce version 2.4 to 6.9.4
 5. Automation and AI
 
 == Changelog ==
+
+= 1.5.3 =
+* Fixed "Connect to Shipink" link for the new Shipink app (signup page moved)
 
 = 1.5.2 =
 * Fixed XSS vulnerability in the admin settings page

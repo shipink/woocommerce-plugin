@@ -17,7 +17,7 @@
  * Plugin URI:        https://shipink.io
  * Description:       Shipink is a new and innovative way for e-commerce companies to easily integrate and use the shipping companies they want to work with.
 
- * Version:           1.5.2
+ * Version:           1.5.3
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       shipink
@@ -34,7 +34,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'SHIPINK_VERSION', '1.5.2' );
+define( 'SHIPINK_VERSION', '1.5.3' );
 define( 'SHIPINK_PLUGIN_FILE', __FILE__ );
 define( 'SHIPINK_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 
