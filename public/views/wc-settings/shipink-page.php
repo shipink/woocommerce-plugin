@@ -16,7 +16,7 @@ $params = array(
     'name'              => get_option('blogname'),
     'url'               => get_option('home'),
 );
-$signup_url = add_query_arg($params, 'https://app.shipink.io/signup');
+$signup_url = add_query_arg($params, 'https://app.shipink.io/');
 
 $connection_status = isset($is_connected) && $is_connected;
 
