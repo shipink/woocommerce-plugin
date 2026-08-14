@@ -265,8 +265,7 @@ class Shipink
             return;
         }
         $is_connected = $this->is_shipink_connected();
-        $file = rtrim(plugin_dir_path(__DIR__), '/') . '/public/views/wc-settings/shipink-page.php';
-        echo $this->render($file, array('is_connected' => $is_connected));
+        require rtrim(plugin_dir_path(__DIR__), '/') . '/public/views/wc-settings/shipink-page.php';
     }
 
     /**
@@ -285,6 +284,9 @@ class Shipink
         }
 
         global $wpdb;
+        // WooCommerce exposes no API for reading its API keys, and this runs once
+        // per view of our own settings screen, so a direct uncached query is fine.
+        // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
         $api_key_count = (int) $wpdb->get_var(
             $wpdb->prepare(
                 "SELECT COUNT(*) FROM {$wpdb->prefix}woocommerce_api_keys
@@ -430,17 +432,6 @@ class Shipink
                 'class' => array(),
             ),
         );
-    }
-
-    public function render($file, $variables = array())
-    {
-        if (!empty($variables)) {
-            extract($variables, EXTR_SKIP);
-        }
-
-        ob_start();
-        require $file;
-        return ob_get_clean();
     }
 
     function custom_register_order_missing_status()

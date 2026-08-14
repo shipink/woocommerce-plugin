@@ -55,23 +55,39 @@ class Shipink_Admin {
 	}
 
 	/**
+	 * Hook suffix ending of the Shipink admin page.
+	 *
+	 * The full suffix is "{parent}_page_wc-shipink", where {parent} is derived
+	 * from the WooCommerce menu title, so only the ending is matched.
+	 *
+	 * @since    1.5.4
+	 * @var      string
+	 */
+	const SCREEN_SUFFIX = '_page_wc-shipink';
+
+	/**
+	 * Whether the given admin page is the Shipink admin page.
+	 *
+	 * @since    1.5.4
+	 * @param    string    $hook_suffix    The current admin page.
+	 * @return   bool
+	 */
+	private function is_shipink_screen( $hook_suffix ) {
+		return is_string( $hook_suffix )
+			&& substr( $hook_suffix, - strlen( self::SCREEN_SUFFIX ) ) === self::SCREEN_SUFFIX;
+	}
+
+	/**
 	 * Register the stylesheets for the admin area.
 	 *
 	 * @since    1.5.1
+	 * @param    string    $hook_suffix    The current admin page.
 	 */
-	public function enqueue_styles() {
+	public function enqueue_styles( $hook_suffix ) {
 
-		/**
-		 * This function is provided for demonstration purposes only.
-		 *
-		 * An instance of this class should be passed to the run() function
-		 * defined in Shipink_Loader as all of the hooks are defined
-		 * in that particular class.
-		 *
-		 * The Shipink_Loader will then create the relationship
-		 * between the defined hooks and the functions defined in this
-		 * class.
-		 */
+		if ( ! $this->is_shipink_screen( $hook_suffix ) ) {
+			return;
+		}
 
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/shipink-admin.css', array(), $this->version, 'all' );
 
@@ -81,20 +97,13 @@ class Shipink_Admin {
 	 * Register the JavaScript for the admin area.
 	 *
 	 * @since    1.5.1
+	 * @param    string    $hook_suffix    The current admin page.
 	 */
-	public function enqueue_scripts() {
+	public function enqueue_scripts( $hook_suffix ) {
 
-		/**
-		 * This function is provided for demonstration purposes only.
-		 *
-		 * An instance of this class should be passed to the run() function
-		 * defined in Shipink_Loader as all of the hooks are defined
-		 * in that particular class.
-		 *
-		 * The Shipink_Loader will then create the relationship
-		 * between the defined hooks and the functions defined in this
-		 * class.
-		 */
+		if ( ! $this->is_shipink_screen( $hook_suffix ) ) {
+			return;
+		}
 
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/shipink-admin.js', array( 'jquery' ), $this->version, false );
 
