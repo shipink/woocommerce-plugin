@@ -1,10 +1,11 @@
 === Shipink ===
-Version: 1.5.3
+Version: 1.5.4
 Contributors: shipink
 Tags: shipping,kargo,label,etiket
-Requires at least: 4.5.0
-Tested up to: 6.9.4
-Stable tag: 1.5.3
+Requires at least: 5.4
+Tested up to: 7.1
+Requires PHP: 7.4
+Stable tag: 1.5.4
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -53,7 +54,7 @@ How It Works:
 
 = What WooCommerce version does the plugin support? =
 
-The plugin is tested on WooCommerce version 2.4 to 6.9.4
+The plugin requires WooCommerce 5.0 or higher.
 
 == Screenshots ==
 
@@ -64,6 +65,12 @@ The plugin is tested on WooCommerce version 2.4 to 6.9.4
 5. Automation and AI
 
 == Changelog ==
+
+= 1.5.4 =
+* Added support for WordPress 7.1
+* Fixed inaccurate minimum requirements (now WordPress 5.4 and PHP 7.4)
+* Admin styles and scripts are no longer loaded on unrelated admin pages
+* The admin page logo is now bundled with the plugin instead of being loaded from a remote server
 
 = 1.5.3 =
 * Fixed "Connect to Shipink" link for the new Shipink app (signup page moved)
