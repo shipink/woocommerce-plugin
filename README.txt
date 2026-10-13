@@ -1,11 +1,11 @@
 === Shipink ===
-Version: 1.5.5
+Version: 1.6.0
 Contributors: shipink
 Tags: shipping,kargo,label,etiket
 Requires at least: 5.4
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.5.5
+Stable tag: 1.6.0
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -65,6 +65,10 @@ The plugin requires WooCommerce 5.0 or higher.
 5. Automation and AI
 
 == Changelog ==
+
+= 1.6.0 =
+* New "Shipink" shipping method: show your Shipink carrier rates to customers at checkout. Turn on live rates for the store in the Shipink panel, then add the method to your shipping zones.
+* Rates follow the chosen payment method: with cash or card on delivery, only carriers that can collect at the door are offered.
 
 = 1.5.5 =
 * Added an "Open in Shipink" button to the order edit screen

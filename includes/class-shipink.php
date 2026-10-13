@@ -82,6 +82,7 @@ class Shipink
         $this->define_public_hooks();
         $this->load_shipink_admin_menu();
         $this->load_shipink_wc_status();
+        $this->load_shipink_live_rates();
 
     }
 
@@ -126,6 +127,7 @@ class Shipink
          * side of the site.
          */
         require_once plugin_dir_path(dirname(__FILE__)) . 'public/class-shipink-public.php';
+        require_once plugin_dir_path(dirname(__FILE__)) . 'includes/class-shipink-live-rates.php';
 
         $this->loader = new Shipink_Loader();
 
@@ -225,6 +227,12 @@ class Shipink
     public function get_version()
     {
         return $this->version;
+    }
+
+    private function load_shipink_live_rates()
+    {
+        $live_rates = new Shipink_Live_Rates();
+        $live_rates->register();
     }
 
     private function load_shipink_admin_menu()

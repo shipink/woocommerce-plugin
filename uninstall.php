@@ -29,3 +29,6 @@
 if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 	exit;
 }
+
+delete_option( 'shipink_live_rates' );
+delete_option( 'shipink_live_rates_cache_version' );
