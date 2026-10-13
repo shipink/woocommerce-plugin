@@ -242,6 +242,7 @@ class Shipink
         add_action('woocommerce_order_action_mark_partially_shipped', array($this, 'handle_mark_partially_shipped'));
         add_filter('wc_order_statuses', array($this, 'add_missing_to_order_statuses'));
         add_filter('woocommerce_admin_order_actions', array($this, 'add_tracking_action_to_order_list'), 10, 2);
+        add_action('add_meta_boxes', array($this, 'add_open_in_shipink_meta_box'));
         add_action('woocommerce_order_details_after_order_table', array($this, 'add_tracking_info_to_order_details'), 10, 1);
         add_filter('woocommerce_my_account_my_orders_actions', array($this, 'add_custom_tracking_button_to_orders'), 10, 2);
     }
@@ -361,6 +362,35 @@ class Shipink
             );
         }
         return $actions;
+    }
+
+    function add_open_in_shipink_meta_box()
+    {
+        // Legacy post-based order screen and the HPOS orders screen.
+        add_meta_box(
+            'shipink-open',
+            __('Shipink', 'shipink'),
+            array($this, 'render_open_in_shipink_meta_box'),
+            array('shop_order', 'woocommerce_page_wc-orders'),
+            'side',
+            'high'
+        );
+    }
+
+    function render_open_in_shipink_meta_box($post_or_order)
+    {
+        $order = $post_or_order instanceof WC_Order ? $post_or_order : wc_get_order($post_or_order->ID);
+        if (!$order) {
+            return;
+        }
+        // Shipink stores the WooCommerce order number as the channel order id;
+        // with action=open the orders page opens the single matching order.
+        $url = 'https://app.shipink.io/orders?' . http_build_query(array(
+            'sales_channel_id' => 'woocommerce',
+            'sales_channel_order_id' => $order->get_order_number(),
+            'action' => 'open',
+        ), '', '&', PHP_QUERY_RFC3986);
+        echo '<a class="button" href="' . esc_url($url) . '" target="_blank" rel="noopener noreferrer">' . esc_html__('Open in Shipink', 'shipink') . '</a>';
     }
 
     function add_tracking_info_to_order_details($order)

@@ -286,3 +286,7 @@ msgid "%d issue"
 msgid_plural "%d issues"
 msgstr[0] ""
 msgstr[1] ""
+
+#: includes/class-shipink.php
+msgid "Open in Shipink"
+msgstr ""

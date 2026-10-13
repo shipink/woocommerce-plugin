@@ -294,6 +294,10 @@ msgid_plural "%d issues"
 msgstr[0] "%d issue"
 msgstr[1] "%d issues"
 
+#: includes/class-shipink.php
+msgid "Open in Shipink"
+msgstr "Open in Shipink"
+
 #~ msgid ""
 #~ "Shipink is a platform that connects multiple carriers and sales channels "
 #~ "and provides an easy-to-use interface to manage all of your label "
