@@ -1,7 +1,7 @@
 // Shipink return block for merchant storefronts. The same file ships in the
 // Shopify app (extensions/shipink/assets/returns.js, the source) and
 // the WooCommerce plugin (public/js/shipink-returns.js, a copy): change it
-// here, then copy it over. It talks to tracking-ui's /api/returns/<channel>
+// here, then copy it over. It talks to tracking-ui's /api/<channel>/return-requests
 // (data-endpoint), which passes the requests on to return-api. The page and
 // the copy follow tracking-ui's ReturnCard and ReturnForm.
 (function () {
@@ -447,7 +447,7 @@
       results.replaceChildren();
       show(t('loading'));
       findButton.disabled = true;
-      fetch(endpoint + '/lookup?' + params.toString())
+      fetch(endpoint + '?' + params.toString())
         .then(function (response) {
           if (response.ok) return response.json();
           throw response.status;
@@ -778,7 +778,7 @@
         submitting = true;
         sync();
         try {
-          var view = await post('/create', JSON.stringify({
+          var view = await post('', JSON.stringify({
             tracking_id: entry.tracking_id,
             return_token: entry.return_token || '',
             verification: verification,

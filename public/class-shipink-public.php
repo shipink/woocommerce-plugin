@@ -130,7 +130,7 @@ class Shipink_Public {
 		return sprintf(
 			'<div class="shipink-returns" style="--shipink-accent: %s;" data-endpoint="%s" data-shop="%s" data-locale="%s" data-heading="%s"></div>',
 			esc_attr( $accent ? $accent : '#111827' ),
-			esc_url( untrailingslashit( $base ) . '/api/returns/woocommerce' ),
+			esc_url( untrailingslashit( $base ) . '/api/woocommerce/return-requests' ),
 			esc_attr( strtolower( (string) wp_parse_url( home_url(), PHP_URL_HOST ) ) ),
 			esc_attr( determine_locale() ),
 			esc_attr( $atts['heading'] )
