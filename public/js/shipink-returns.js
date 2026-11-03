@@ -1,5 +1,5 @@
 // Shipink return block for merchant storefronts. The same file ships in the
-// Shopify app (extensions/shipink-returns/assets/returns.js, the source) and
+// Shopify app (extensions/shipink/assets/returns.js, the source) and
 // the WooCommerce plugin (public/js/shipink-returns.js, a copy): change it
 // here, then copy it over. It talks to tracking-ui's /api/returns/<channel>
 // (data-endpoint), which passes the requests on to return-api. The page and
