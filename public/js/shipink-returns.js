@@ -27,7 +27,7 @@
       loading: 'Siparişiniz aranıyor…',
       notFound: 'Bu bilgilerle eşleşen bir sipariş bulunamadı. Sipariş numarasını ve siparişte kullandığınız e-posta ya da telefonu kontrol edin.',
       invalid: 'Sipariş numarasını ve geçerli bir e-posta ya da telefon girin.',
-      tooMany: 'Çok fazla deneme yaptınız. Lütfen bir dakika sonra tekrar deneyin.',
+      tooMany: 'Çok fazla deneme yaptınız. Lütfen birkaç dakika sonra tekrar deneyin.',
       error: 'İade bilgileri şu an alınamıyor. Lütfen daha sonra tekrar deneyin.',
       shippedAt: '{date} tarihinde gönderildi',
       offerTitle: 'İade etmek mi istiyorsunuz?',
@@ -119,7 +119,7 @@
       loading: 'Looking up your order…',
       notFound: 'No order matches these details. Check the order number and the email or phone you used for the order.',
       invalid: 'Enter the order number and a valid email or phone.',
-      tooMany: 'Too many attempts. Please try again in a minute.',
+      tooMany: 'Too many attempts. Please try again in a few minutes.',
       error: 'Return details are unavailable right now. Please try again later.',
       shippedAt: 'Shipped on {date}',
       offerTitle: 'Want to return something?',
@@ -229,6 +229,13 @@
       case 'request_exists': return 'alreadyRequested';
       default: return 'contactSeller';
     }
+  }
+
+  // return-api answers nothing_returnable once a non-open request holds every
+  // unit; the request card already says what happened.
+  function noteGroup(reason, hasRequest) {
+    if (hasRequest && (reason === 'request_exists' || reason === 'nothing_returnable')) return '';
+    return ineligibleGroup(reason);
   }
 
   // As tracking-ui's errorMessageKey, without reCAPTCHA.
@@ -530,9 +537,8 @@
           box.append(open);
           node.append(box);
         } else if (offer) {
-          var group = ineligibleGroup(offer.reason);
-          // The request card already says what "already requested" would.
-          if (!(group === 'alreadyRequested' && entry.request)) {
+          var group = noteGroup(offer.reason, !!entry.request);
+          if (group) {
             node.append(el('p', 'shipink-returns__note', t('ineligible.' + group)));
           }
         }
@@ -812,6 +818,7 @@
   window.ShipinkReturns = {
     verificationFor: verificationFor,
     ineligibleGroup: ineligibleGroup,
+    noteGroup: noteGroup,
     errorKey: errorKey,
     instructionKey: instructionKey,
     cardState: cardState,
