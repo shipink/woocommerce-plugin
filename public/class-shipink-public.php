@@ -100,4 +100,41 @@ class Shipink_Public {
 
 	}
 
+	/**
+	 * Registers [shipink_returns].
+	 *
+	 * @since    1.7.0
+	 */
+	public function register_shortcodes() {
+		add_shortcode( 'shipink_returns', array( $this, 'returns_shortcode' ) );
+	}
+
+	/**
+	 * [shipink_returns heading="" accent="#111827"]: the block buyers request a
+	 * return with. shipink-returns.js builds the whole block inside this root.
+	 * Define SHIPINK_RETURNS_BASE in wp-config.php to point it at another
+	 * Shipink environment (e.g. https://dev.ship.ink) for testing.
+	 *
+	 * @since    1.7.0
+	 * @param    array|string    $atts    Shortcode attributes.
+	 * @return   string
+	 */
+	public function returns_shortcode( $atts ) {
+		$atts   = shortcode_atts( array( 'heading' => '', 'accent' => '#111827' ), $atts, 'shipink_returns' );
+		$accent = sanitize_hex_color( $atts['accent'] );
+		$base   = defined( 'SHIPINK_RETURNS_BASE' ) ? SHIPINK_RETURNS_BASE : 'https://ship.ink';
+
+		wp_enqueue_style( 'shipink-returns', plugin_dir_url( __FILE__ ) . 'css/shipink-returns.css', array(), $this->version );
+		wp_enqueue_script( 'shipink-returns', plugin_dir_url( __FILE__ ) . 'js/shipink-returns.js', array(), $this->version, true );
+
+		return sprintf(
+			'<div class="shipink-returns" style="--shipink-accent: %s;" data-endpoint="%s" data-shop="%s" data-locale="%s" data-heading="%s"></div>',
+			esc_attr( $accent ? $accent : '#111827' ),
+			esc_url( untrailingslashit( $base ) . '/api/returns/woocommerce' ),
+			esc_attr( strtolower( (string) wp_parse_url( home_url(), PHP_URL_HOST ) ) ),
+			esc_attr( determine_locale() ),
+			esc_attr( $atts['heading'] )
+		);
+	}
+
 }

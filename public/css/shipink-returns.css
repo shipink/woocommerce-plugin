@@ -1,0 +1,234 @@
+.shipink-returns {
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+.shipink-returns__heading {
+  margin: 0 0 1.5rem;
+}
+
+.shipink-returns__lookup,
+.shipink-returns__form {
+  display: grid;
+  gap: 1rem;
+}
+
+.shipink-returns__field,
+.shipink-returns__field > label {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.shipink-returns__field[hidden],
+.shipink-returns__item-details[hidden],
+.shipink-returns__error[hidden],
+.shipink-returns__message[hidden] {
+  display: none;
+}
+
+.shipink-returns input:not([type='checkbox']):not([type='file']),
+.shipink-returns select,
+.shipink-returns textarea {
+  font: inherit;
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  background-color: transparent;
+  color: inherit;
+}
+
+.shipink-returns input[type='checkbox'] {
+  accent-color: var(--shipink-accent, #111827);
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.shipink-returns__button,
+.shipink-returns__secondary {
+  font: inherit;
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.shipink-returns__button {
+  border: 0;
+  background: var(--shipink-accent, #111827);
+  color: #fff;
+}
+
+.shipink-returns__secondary {
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  background: transparent;
+  color: inherit;
+}
+
+.shipink-returns__button:disabled,
+.shipink-returns__secondary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.shipink-returns :focus-visible {
+  outline: 2px solid var(--shipink-accent, #111827);
+  outline-offset: 2px;
+}
+
+.shipink-returns__message {
+  margin: 1.5rem 0 0;
+}
+
+.shipink-returns__results {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.shipink-returns__card {
+  display: grid;
+  gap: 1rem;
+  padding: 1.25rem;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 6px;
+}
+
+.shipink-returns__card-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.shipink-returns__status,
+.shipink-returns__offer,
+.shipink-returns__section {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.shipink-returns__status p,
+.shipink-returns__offer p,
+.shipink-returns__section p,
+.shipink-returns__note {
+  margin: 0;
+}
+
+.shipink-returns__title {
+  font-weight: 600;
+}
+
+.shipink-returns__muted {
+  font-size: 0.875em;
+  opacity: 0.75;
+}
+
+.shipink-returns__code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 1.125em;
+  font-weight: 600;
+  user-select: all;
+}
+
+.shipink-returns__link {
+  color: var(--shipink-accent, #111827);
+}
+
+.shipink-returns__item {
+  display: grid;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+}
+
+.shipink-returns__item-head {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+}
+
+.shipink-returns__item-head img {
+  width: 3rem;
+  height: 3rem;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.shipink-returns__item-details {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 0.5rem;
+}
+
+.shipink-returns__photos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 0.5rem 0.5rem 0 0;
+}
+
+.shipink-returns__photo {
+  position: relative;
+}
+
+.shipink-returns__photo img {
+  width: 5rem;
+  height: 5rem;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.shipink-returns__photo-remove {
+  position: absolute;
+  top: -0.6rem;
+  right: -0.6rem;
+  width: 1.75rem;
+  height: 1.75rem;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 50%;
+  background: #fff;
+  color: #333;
+  cursor: pointer;
+  font-size: 0.75rem;
+}
+
+.shipink-returns__photo-add {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5rem;
+  height: 5rem;
+  padding: 0.25rem;
+  border: 1px dashed rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  font-size: 0.75rem;
+  text-align: center;
+  cursor: pointer;
+}
+
+.shipink-returns__photo-add:focus-within {
+  outline: 2px solid var(--shipink-accent, #111827);
+  outline-offset: 2px;
+}
+
+.shipink-returns__photo-add input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.shipink-returns__error {
+  margin: 0;
+  color: #b91c1c;
+  font-size: 0.875em;
+}
+
+.shipink-returns__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
