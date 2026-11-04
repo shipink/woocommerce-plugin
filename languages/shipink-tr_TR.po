@@ -310,3 +310,7 @@ msgstr "Shipink'te aç"
 #~ "Shipink, birden fazla kargo şirketini ve satış kanalını birbirine "
 #~ "bağlayan ve etiket oluşturma, takip, iade ve daha birçok işlemi yönetmek "
 #~ "için kullanımı kolay bir arayüz sağlayan bir platformdur."
+
+#: includes/class-shipink.php:441
+msgid "Return"
+msgstr "İade et"

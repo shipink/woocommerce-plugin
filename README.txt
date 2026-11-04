@@ -68,6 +68,7 @@ The plugin requires WooCommerce 5.0 or higher.
 
 = 1.8.0 =
 * New [shipink_tracking] shortcode: add it to any page so your customers can track their order without leaving your site.
+* Signed-in customers get a Return button on their delivered orders in My Account > Orders when a page carries [shipink_returns]; it opens that page with the order already looked up.
 
 = 1.7.1 =
 * The return block now calls Shipink's renamed return endpoints. No change for your customers.

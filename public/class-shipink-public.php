@@ -128,13 +128,27 @@ class Shipink_Public {
 		wp_enqueue_style( 'shipink-returns', plugin_dir_url( __FILE__ ) . 'css/shipink-returns.css', array(), $this->version );
 		wp_enqueue_script( 'shipink-returns', plugin_dir_url( __FILE__ ) . 'js/shipink-returns.js', array(), $this->version, true );
 
+		// ?shipink_order=<id> from the My Account "Return" button: the block
+		// looks the order up right away, for its signed-in owner only.
+		$order   = '';
+		$contact = '';
+		if ( isset( $_GET['shipink_order'] ) && is_user_logged_in() && function_exists( 'wc_get_order' ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			$wc_order = wc_get_order( absint( $_GET['shipink_order'] ) ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			if ( $wc_order && (int) $wc_order->get_customer_id() === get_current_user_id() ) {
+				$order   = $wc_order->get_order_number();
+				$contact = $wc_order->get_billing_email() ? $wc_order->get_billing_email() : $wc_order->get_billing_phone();
+			}
+		}
+
 		return sprintf(
-			'<div class="shipink-returns" style="--shipink-accent: %s;" data-endpoint="%s" data-shop="%s" data-locale="%s" data-heading="%s"></div>',
+			'<div class="shipink-returns" style="--shipink-accent: %s;" data-endpoint="%s" data-shop="%s" data-locale="%s" data-heading="%s" data-order="%s" data-contact="%s"></div>',
 			esc_attr( $accent ? $accent : '#111827' ),
 			esc_url( untrailingslashit( $base ) . '/api/woocommerce/return-requests' ),
 			esc_attr( strtolower( (string) wp_parse_url( home_url(), PHP_URL_HOST ) ) ),
 			esc_attr( determine_locale() ),
-			esc_attr( $atts['heading'] )
+			esc_attr( $atts['heading'] ),
+			esc_attr( $order ),
+			esc_attr( $contact )
 		);
 	}
 

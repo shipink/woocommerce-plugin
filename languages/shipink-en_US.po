@@ -306,3 +306,7 @@ msgstr "Open in Shipink"
 #~ "Shipink is a platform that connects multiple carriers and sales channels "
 #~ "and provides an easy-to-use interface to manage all of your label "
 #~ "creation, tracking, returns, and many more."
+
+#: includes/class-shipink.php:441
+msgid "Return"
+msgstr "Return"

@@ -290,3 +290,7 @@ msgstr[1] ""
 #: includes/class-shipink.php
 msgid "Open in Shipink"
 msgstr ""
+
+#: includes/class-shipink.php:441
+msgid "Return"
+msgstr ""

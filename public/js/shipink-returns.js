@@ -467,6 +467,14 @@
         });
     });
 
+    // A signed-in buyer arriving from their order list (WooCommerce's
+    // "Return" button) comes with the order filled in: look it up right away.
+    if (root.dataset.order && root.dataset.contact) {
+      orderInput.value = root.dataset.order;
+      contactInput.value = root.dataset.contact;
+      lookup.requestSubmit();
+    }
+
     function trackLink(view) {
       if (!/^https:/i.test(view.return_tracking_url || '')) return null;
       var link = el('a', 'shipink-returns__link', t('status.trackReturn'));

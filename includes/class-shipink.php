@@ -254,6 +254,8 @@ class Shipink
         add_action('add_meta_boxes', array($this, 'add_open_in_shipink_meta_box'));
         add_action('woocommerce_order_details_after_order_table', array($this, 'add_tracking_info_to_order_details'), 10, 1);
         add_filter('woocommerce_my_account_my_orders_actions', array($this, 'add_custom_tracking_button_to_orders'), 10, 2);
+        add_filter('woocommerce_my_account_my_orders_actions', array($this, 'add_return_button_to_orders'), 10, 2);
+        add_action('save_post', array($this, 'remember_returns_page'), 10, 2);
     }
 
     public function create_admin_menu()
@@ -420,5 +422,58 @@ class Shipink
             );
         }
         return $actions;
+    }
+
+    /**
+     * Adds "Return" to a delivered order in My Account > Orders when a
+     * published page carries [shipink_returns]. Shipink marks an order
+     * completed once its shipment is delivered. The page opens with the order
+     * looked up (see Shipink_Public::returns_shortcode).
+     */
+    function add_return_button_to_orders($actions, $order)
+    {
+        if (!$order->has_status('completed') || empty($order->get_meta('shipink_tracking_url'))) {
+            return $actions;
+        }
+        $page_id = $this->returns_page_id();
+        if ($page_id) {
+            $actions['shipink_return'] = array(
+                'url' => add_query_arg('shipink_order', $order->get_id(), get_permalink($page_id)),
+                'name' => __('Return', 'shipink')
+            );
+        }
+        return $actions;
+    }
+
+    /**
+     * The published page with [shipink_returns], 0 when there is none. The
+     * answer is kept in an option; remember_returns_page keeps it current and
+     * a stale one (page trashed or drafted) is searched again.
+     */
+    private function returns_page_id()
+    {
+        $page_id = get_option('shipink_returns_page_id', false);
+        if (false !== $page_id && (0 === (int) $page_id || 'publish' === get_post_status((int) $page_id))) {
+            return (int) $page_id;
+        }
+        global $wpdb;
+        $page_id = (int) $wpdb->get_var($wpdb->prepare(
+            "SELECT ID FROM {$wpdb->posts} WHERE post_status = 'publish' AND post_type IN ('page', 'post') AND post_content LIKE %s ORDER BY post_type = 'page' DESC, ID LIMIT 1",
+            '%' . $wpdb->esc_like('[shipink_returns') . '%'
+        ));
+        update_option('shipink_returns_page_id', $page_id);
+        return $page_id;
+    }
+
+    function remember_returns_page($post_id, $post)
+    {
+        if (wp_is_post_revision($post_id) || wp_is_post_autosave($post_id)) {
+            return;
+        }
+        if ('publish' === $post->post_status && has_shortcode($post->post_content, 'shipink_returns')) {
+            update_option('shipink_returns_page_id', $post_id);
+        } elseif ((int) get_option('shipink_returns_page_id') === $post_id) {
+            delete_option('shipink_returns_page_id');
+        }
     }
 }
