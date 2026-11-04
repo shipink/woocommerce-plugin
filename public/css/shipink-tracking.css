@@ -1,0 +1,108 @@
+.shipink-tracking {
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+.shipink-tracking__heading {
+  margin: 0 0 1.5rem;
+}
+
+.shipink-tracking__form {
+  display: grid;
+  gap: 1rem;
+}
+
+.shipink-tracking__field {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.shipink-tracking__field input {
+  font: inherit;
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  background: transparent;
+  color: inherit;
+}
+
+.shipink-tracking__button {
+  font: inherit;
+  padding: 0.8rem 1.5rem;
+  border: 0;
+  border-radius: 4px;
+  background: var(--shipink-accent);
+  color: #fff;
+  cursor: pointer;
+}
+
+.shipink-tracking__button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.shipink-tracking__message {
+  margin: 1.5rem 0 0;
+}
+
+.shipink-tracking__results {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.shipink-tracking__card {
+  padding: 1.25rem;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 6px;
+}
+
+.shipink-tracking__card-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.shipink-tracking__status {
+  color: var(--shipink-accent);
+}
+
+.shipink-tracking__status--undelivered,
+.shipink-tracking__status--canceled {
+  color: #b91c1c;
+}
+
+.shipink-tracking__status--returned,
+.shipink-tracking__status--delayed {
+  color: #b45309;
+}
+
+.shipink-tracking__date,
+.shipink-tracking__meta {
+  font-size: 0.875em;
+  opacity: 0.75;
+}
+
+.shipink-tracking__meta {
+  margin: 0.4rem 0 0;
+}
+
+.shipink-tracking__history {
+  list-style: none;
+  margin: 1rem 0;
+  padding: 0 0 0 1rem;
+  border-left: 2px solid rgba(0, 0, 0, 0.12);
+  display: grid;
+  gap: 0.75rem;
+}
+
+.shipink-tracking__history li {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.shipink-tracking__link {
+  color: var(--shipink-accent);
+}

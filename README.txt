@@ -1,11 +1,11 @@
 === Shipink ===
-Version: 1.7.1
+Version: 1.8.0
 Contributors: shipink
 Tags: shipping,kargo,label,etiket
 Requires at least: 5.4
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.7.1
+Stable tag: 1.8.0
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -65,6 +65,9 @@ The plugin requires WooCommerce 5.0 or higher.
 5. Automation and AI
 
 == Changelog ==
+
+= 1.8.0 =
+* New [shipink_tracking] shortcode: add it to any page so your customers can track their order without leaving your site.
 
 = 1.7.1 =
 * The return block now calls Shipink's renamed return endpoints. No change for your customers.
