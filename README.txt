@@ -1,11 +1,11 @@
 === Shipink ===
-Version: 1.8.0
+Version: 1.8.1
 Contributors: shipink
 Tags: shipping,kargo,label,etiket
 Requires at least: 5.4
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 1.8.0
+Stable tag: 1.8.1
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -65,6 +65,9 @@ The plugin requires WooCommerce 5.0 or higher.
 5. Automation and AI
 
 == Changelog ==
+
+= 1.8.1 =
+* The return page shows the DHL eCommerce drop-off instruction for shipments under DHL eCommerce's new Shipink carrier id.
 
 = 1.8.0 =
 * New [shipink_tracking] shortcode: add it to any page so your customers can track their order without leaving your site.

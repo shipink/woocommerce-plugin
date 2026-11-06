@@ -15,7 +15,7 @@
   var PHOTO_QUALITIES = [0.85, 0.7, 0.5];
   // return-api domain.Reasons, in its order.
   var REASONS = ['size_mismatch', 'damaged', 'wrong_item', 'not_as_expected', 'changed_mind', 'other'];
-  var INSTRUCTION_CARRIERS = ['aras', 'mng', 'yurtici', 'surat', 'sendeo', 'ptt', 'kolay_gelsin', 'hepsijet', 'manual'];
+  var INSTRUCTION_CARRIERS = ['aras', 'mng', 'dhl_tr', 'yurtici', 'surat', 'sendeo', 'ptt', 'kolay_gelsin', 'hepsijet', 'manual'];
   var WORDED_STATES = ['pending', 'shipped', 'received', 'accepted', 'refunded', 'expired'];
 
   var MESSAGES = {
@@ -58,6 +58,7 @@
       'instructions.default': 'Paketinizi hazırlayıp iade kodunuzla birlikte kargo şubesine teslim edebilirsiniz.',
       'instructions.aras': 'Paketinizi herhangi bir Aras Kargo şubesine götürüp iade kodunuzu söylemeniz yeterli.',
       'instructions.mng': 'Paketinizi bir DHL eCommerce (MNG Kargo) şubesine götürün; iadeyi Shipink üzerinden yaptığınızı belirterek iade kodunu söyleyin.',
+      'instructions.dhl_tr': 'Paketinizi bir DHL eCommerce (MNG Kargo) şubesine götürün; iadeyi Shipink üzerinden yaptığınızı belirterek iade kodunu söyleyin.',
       'instructions.yurtici': 'Paketinizi herhangi bir Yurtiçi Kargo şubesine götürüp iade kodunuzu söylemeniz yeterli.',
       'instructions.yurticiWithCustomerNumber': 'Paketinizi herhangi bir Yurtiçi Kargo şubesine götürün; görevliye iade kodunuzu ve yukarıdaki müşteri numarasını verin.',
       'instructions.surat': 'Paketinizi herhangi bir Sürat Kargo şubesine götürüp iade kodunuzu söylemeniz yeterli.',
@@ -150,6 +151,7 @@
       'instructions.default': 'Pack the item and hand it in at the carrier\'s branch with your return code.',
       'instructions.aras': 'Take the package to any Aras Kargo branch and give them your return code.',
       'instructions.mng': 'Take the package to a DHL eCommerce (MNG Kargo) branch, say it is a return made through Shipink and give them your return code.',
+      'instructions.dhl_tr': 'Take the package to a DHL eCommerce (MNG Kargo) branch, say it is a return made through Shipink and give them your return code.',
       'instructions.yurtici': 'Take the package to any Yurtiçi Kargo branch and give them your return code.',
       'instructions.yurticiWithCustomerNumber': 'Take the package to any Yurtiçi Kargo branch and give them your return code and the customer number shown above.',
       'instructions.surat': 'Take the package to any Sürat Kargo branch and give them your return code.',
